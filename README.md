@@ -3,9 +3,7 @@
 
 ## about
 
-Reality from Scratch is a DIY VR project by Systems Design Engineering students at the University of Waterloo.
-
-VR and AR has been a passion of mine for many years, and it's only now that I feel I have the financial means to experience it. But as a learner and tinkerer at heart, I wasn't just going to purchase a Quest.
+Reality from Scratch is a DIY VR project by a small team of 1A Systems Design Engineering students at the University of Waterloo. It uses resources from existing open-source projects, like Relativty and HadesVR.
 
 ## planning
 
