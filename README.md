@@ -3,7 +3,7 @@ Reality from Scratch is a DIY VR project by Systems Design Engineering students 
 
 VR and AR has been a passion of mine for many years, and it's only now that I feel I have the financial means to experience it. But as a learner and tinkerer at heart, I wasn't just going to purchase a Quest.
 
-#planning
+# planning
 
 Based off of the open-source guide 'Relativty', my friends and I have been building my very own, fully custom VR headset. So far, we have soldered an IMU and MCU together, and gotten real-time motion vector data translated into SteamVR with drivers courtesy of the Relativty project. We then routed the SteamVR output to displays, which will soon have fresnel lenses and a 3D-printed housing.
 
