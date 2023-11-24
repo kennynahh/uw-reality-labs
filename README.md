@@ -7,7 +7,7 @@ Reality from Scratch is a DIY VR project by a small team of 1A Systems Design En
 
 ## planning
 
-Based off of the open-source guide 'Relativty', a few of my classmates and I have been building my very own, fully custom VR headset. So far, we have soldered an IMU and MCU together, and gotten real-time motion vector data translated into SteamVR with drivers courtesy of the Relativty project. We then routed the SteamVR output to displays, which will soon have accompanying fresnel lenses and a 3D-printed housing.
+Based off of the open-source guide 'Relativty', a few of my classmates and I have been building my very own, fully custom VR headset. So far, we have soldered an IMU and MCU together, and gotten real-time motion vector data translated into SteamVR with drivers forked from OpenVR. We then routed the SteamVR output to displays, which will soon have accompanying fresnel lenses and a 3D-printed housing.
 
 PCBs and other various electrical components have been ordered for 2 DIY Wand-like controllers, which will be based off of the open-source guide 'HadesVR'. Each controller will have an IMU, a rechargeable battery, RF transceivers, tactile buttons, triggers, and joysticks. The HMD's microcontroller will also be upgraded.
 
