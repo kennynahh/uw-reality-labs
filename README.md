@@ -1,4 +1,6 @@
 # reality from scratch
+![reality from scratch](https://github.com/kennynahh/reality-from-scratch/assets/86166209/60a159f4-3cd3-422a-b64f-7fdb6bef2cae)
+
 Reality from Scratch is a DIY VR project by Systems Design Engineering students at the University of Waterloo.
 
 VR and AR has been a passion of mine for many years, and it's only now that I feel I have the financial means to experience it. But as a learner and tinkerer at heart, I wasn't just going to purchase a Quest.
