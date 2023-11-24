@@ -25,4 +25,4 @@ We picked fresnel lenses for now, since they are readily available for very low 
 
 ## acknowledgements
 
-Reality from Scratch was heavily inspired by, and uses resources and knowledge from existing open-source projects, like Relativty and HadesVR.
+Reality from Scratch draws inspiration from and utilizes resources and knowledge from existing open-source projects, such as Relativty and HadesVR.
