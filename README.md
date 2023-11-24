@@ -21,7 +21,7 @@ We hope to achieve a full 6DoF positional tracking system with our headset using
 
 ### designing around lenses
 
-We picked fresnel lenses for now, since they are readily available for very low prices on platforms like Amazon and Aliexpress. A lot of these lenses can come at various focal lengths; we hope to test multiple. Depending on the focal length, the length of the headset's housing will vary, so there may be some merit in seeing the difference between shorter and longer housings (in terms of image quality, FOV, perceived weight of the HMD, etc.)
+We picked fresnel lenses for now, since they are readily available for very low prices on platforms like Amazon and Aliexpress. A lot of these lenses can come at various focal lengths; we hope to test multiple. Depending on the focal length, the length of the headset's housing will vary, so there may be some merit in seeing the difference between shorter and longer housings (in terms of image quality, FOV, perceived weight of the HMD and how this affects comfort, etc.)
 
 ## other
 
