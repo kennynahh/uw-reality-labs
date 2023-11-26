@@ -8,7 +8,21 @@ Reality from Scratch is a DIY VR project by a small team of 1A Systems Design En
 
 ## overview
 
-Based off of open-source guides, we have been building our very own, fully custom VR headset. So far, we have soldered an IMU and MCU together, and gotten real-time motion vector data translated into SteamVR with drivers forked from the OpenVR SDK. We then routed the SteamVR output to displays, which will soon have accompanying fresnel lenses and a 3D-printed housing.
+Based off of open-source guides, we have been building our very own, fully custom VR headset. So far, we have soldered an inertial measurement unit (IMU) and microcontroller unit (MCU) together, and gotten real-time motion vector data translated into SteamVR with drivers forked from the OpenVR SDK. We then routed the SteamVR output to displays, which will soon have accompanying fresnel lenses and a 3D-printed housing.
+
+### basic HMD components
+
+| **type of part** | **what we used** |
+| --- | --- |
+| IMU | MPU-6050 |
+| MCU | Arduino Pro Micro |
+| Display | 2 x 1440p 90Hz LCDs |
+| Housing | 3D Printed |
+| Lenses | 2 x ⌀40mm/f:50mm fresnels |
+
+The Ardiuno Pro Micro is a good choice since it supports USB HID. HID is generally more optimized for smaller, quicker packets of data vs. serial, which is perfect for our use since we'll be sending small but very frequent data from our IMU. In terms of IMU choice, any that supports [FastIMU](https://github.com/LiquidCGS/FastIMU) will work. Any display will work as well - there are a plethora of options on Aliexpress. We talk more about lenses further below.
+
+For a comphrehensive guide on how to build a basic HMD, check out project docs from other DIY VR projects, like [HadesVR's](https://github.com/HadesVR/HadesVR/blob/main/docs/DocsIndex.md).
 
 PCBs and other various electrical components have been ordered for 2 DIY Vive Wand-like controllers, which will be based off of the open-source guide 'HadesVR'. Each controller will have an IMU, a rechargeable battery, RF transceivers, tactile buttons, triggers, and joysticks. The HMD's microcontroller will also be upgraded and moved onto a central PCB.
 
