@@ -10,21 +10,27 @@ Reality from Scratch is a DIY VR project by a small team of 1A Systems Design En
 
 Based off of open-source guides, we have been building our very own, fully custom VR headset. So far, we have soldered an inertial measurement unit (IMU) and microcontroller unit (MCU) together, and gotten real-time motion vector data translated into SteamVR with drivers forked from the OpenVR SDK. We then routed the SteamVR output to displays, which will soon have accompanying fresnel lenses and a 3D-printed housing.
 
-### basic HMD components
+### basic HMD hardware
 
-| **type of part** | **what we used** |
+| **part type** | **our pick** |
 | --- | --- |
 | IMU | MPU-6050 |
-| MCU | Arduino Pro Micro |
-| Display | 2 x 1440p 90Hz LCDs |
-| Housing | 3D Printed |
-| Lenses | 2 x ⌀40mm/f:50mm fresnels |
+| MCU | arduino pro micro |
+| display | 2 x 1440p 90Hz LCDs |
+| housing | 3D printed |
+| lenses | 2 x ⌀40mm/f:50mm fresnels |
 
 The Ardiuno Pro Micro is a good choice since it supports USB HID. HID is generally more optimized for smaller, quicker packets of data vs. serial, which is perfect for our use since we'll be sending small but very frequent data from our IMU. In terms of IMU choice, any that supports [FastIMU](https://github.com/LiquidCGS/FastIMU) will work. Any display will work as well - there are a plethora of options on Aliexpress. We talk more about lenses further below.
 
 For a comphrehensive guide on how to build a basic HMD, check out project docs from other DIY VR projects, like [HadesVR's](https://github.com/HadesVR/HadesVR/blob/main/docs/DocsIndex.md).
 
+### controllers (coming soon!)
+
 PCBs and other various electrical components have been ordered for 2 DIY Vive Wand-like controllers, which will be based off of the open-source guide 'HadesVR'. Each controller will have an IMU, a rechargeable battery, RF transceivers, tactile buttons, triggers, and joysticks. The HMD's microcontroller will also be upgraded and moved onto a central PCB.
+
+### drivers
+
+SteamVR is the only universal platform with accessible driver SDKs. It is an easy choice to pick for an open-source project. While we hope in the future to build our own drivers from the OpenVR SDK, for now (in our very early stage), we're going to borrow drivers from [HadesVR](https://github.com/HadesVR/HadesVR), an existing project on DIY VR. These drivers can be found [here](https://github.com/kennynahh/reality-from-scratch/tree/main/drivers). They should be placed in the drivers folder in the SteamVR file path.
 
 ## ideation
 
@@ -36,14 +42,12 @@ We hope to achieve a full 6DoF positional tracking system with our headset using
 
 ### designing around lenses
 
-The interactions between the lenses and the user can often make or break the experience of a lot of consumer VR headsets. Popular consumer VR products like the [Valve Index](https://www.valvesoftware.com/en/index/deep-dive/) have fully adjustable lens interpupilary distance (IPD), as well as adjustable eye relief (distance of the lenses from the user's eyes). This makes this product much more accessible to a wide range of users, and serves to be more comfortable for individuals sensitiive to such changes. However, the further the lenses are from the user's eyes, the smaller the field of view (FoV) is, (given the lenses stay the same size) - and this is why it is especially important that the VR headset sits at a reasonable length from the user.
+The interactions between the lenses and the user can often make or break the experience of a lot of consumer VR headsets. Popular consumer VR products like the [Valve Index](https://www.valvesoftware.com/en/index/deep-dive/) have fully adjustable lens interpupilary distance (IPD), as well as adjustable eye relief (distance of the lenses from the user's eyes). This makes this product much more accessible to a wide range of users, and serves to be more comfortable for individuals sensitiive to such changes. However, the further the lenses are from the user's eyes, the smaller the field of view (FoV) is, (given the lenses stay the same size) - and this is why it is especially important that the VR headset sits at a reasonable length from the user's face.
 
-We picked [fresnel](https://xinreality.com/wiki/Fresnel_lens) lenses for now, since they are readily available for very low prices on platforms like Amazon and Aliexpress, and are thin and lightweight. A lot of these lenses can be purchased at various focal lengths; we hope to test multiple. Depending on the focal length, the length of the headset's housing will vary, so there may be some merit in seeing the difference between shorter and longer housings (in terms of image quality, FOV, perceived weight of the HMD and how this affects comfort, etc.) Creating the mechanical design for the housing of the VR headset will be challenging, given that we'd like to include user-addressable IPD, as well as test different housing for different lenses.
-
-### drivers
-
-SteamVR is the only universal platform with accessible driver SDKs. It is an easy choice to pick for an open-source project. While we hope in the future to build our own drivers from the OpenVR SDK, for now (in our very early stage), we're going to borrow drivers from [HadesVR](https://github.com/HadesVR/HadesVR), an existing project on DIY VR.
+We picked [fresnel](https://xinreality.com/wiki/Fresnel_lens) lenses for now, since they are readily available for very low prices on platforms like Amazon and Aliexpress, and are thin and lightweight. A lot of these lenses can be purchased at various focal lengths; we hope to test multiple. Depending on the focal length, the length of the headset's housing will vary, so there may be some merit in seeing the difference between shorter and longer housings (in terms of image quality, FOV, perceived weight of the HMD and how this affects comfort, etc.) Creating the mechanical design for the housing of the VR headset will be challenging, given that we'd like to include user-addressable IPD, as well as test different housing for different lenses. However, we are excited to begin testing this once our lenses arrive.
 
 ## resources
 
-Reality from Scratch draws inspiration from and utilizes resources and knowledge from existing open-source projects, such as Relativty and HadesVR. A large portion of our research comes from helpful articles and sources from companies like Valve, and from initiatives like XinReality. These useful resources will be cited throughout this doc.
+Reality from Scratch draws inspiration from and utilizes resources and knowledge from existing open-source projects, such as Relativty and HadesVR. We really appreciate the members of the DIY VR community who continue to update their repos. 
+
+A large portion of our research comes from helpful articles and sources from companies like Valve, and from initiatives like XinReality. These useful resources are cited throughout this doc.
