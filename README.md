@@ -12,21 +12,21 @@ Based off of open-source guides, we have been building our very own, fully custo
 
 ### basic HMD hardware
 
-| **part type** | **our pick** |
-| --- | --- |
-| IMU | MPU-6050 |
-| MCU | arduino pro micro |
-| display | 2 x 1440p 90Hz LCDs |
-| housing | 3D printed |
-| lenses | 2 x ⌀40mm/f:50mm fresnels |
+| **part type** | **our pick** | **qty.** |
+| --- | --- | --- |
+| IMU | MPU-6050 | 1 |
+| MCU | arduino pro micro | 1 |
+| display | 1440x1440 90Hz LCDs | 2 (or 1 long) |
+| housing | 3D printed | ~ |
+| lenses | ⌀40mm/f:50mm fresnels | 2 |
 
-The Ardiuno Pro Micro is a good choice since it supports USB HID. HID is generally more optimized for smaller, quicker packets of data vs. serial, which is perfect for our use since we'll be sending small but very frequent data from our IMU. In terms of IMU choice, any that supports [FastIMU](https://github.com/LiquidCGS/FastIMU) will work. Any display will work as well - there are a plethora of options on Aliexpress. We talk more about lenses further below.
+The Ardiuno Pro Micro is a good choice since it supports USB HID. HID is generally more optimized for smaller, more frequent packets of data vs. serial, which is better for our use since we'll be sending small but very frequent data from our IMU. In terms of IMU choice, any that supports [FastIMU](https://github.com/LiquidCGS/FastIMU) will work. Any display will work as well - there are a plethora of options on Aliexpress. We talk more about lenses further below.
 
 For a comphrehensive guide on how to build a basic HMD, check out project docs from other DIY VR projects, like [HadesVR's](https://github.com/HadesVR/HadesVR/blob/main/docs/DocsIndex.md).
 
 ### controllers (coming soon!)
 
-PCBs and other various electrical components have been ordered for 2 DIY Vive Wand-like controllers, which will be based off of the open-source guide 'HadesVR'. Each controller will have an IMU, a rechargeable battery, RF transceivers, tactile buttons, triggers, and joysticks. The HMD's microcontroller will also be upgraded and moved onto a central PCB.
+Custom PCBs and other various electrical components have been ordered for 2 DIY Vive Wand-like controllers, which will be based off of [this](https://github.com/HadesVR/Wand-Controller) WIP open-source guide by LiquidCGS (creator of HadesVR). Each controller will have an IMU, a rechargeable battery, RF transceivers, tactile buttons, triggers, and joysticks. The HMD's microcontroller will also be upgraded and moved onto a central PCB.
 
 ### drivers
 
@@ -38,7 +38,7 @@ SteamVR is the only universal platform with accessible driver SDKs. It is an eas
 
 While the accelerometer in IMUs can technically be used for positional tracking, it is just not possible for it to be accurate enough on its own. A positional tracking demo found on [YouTube](https://youtu.be/_q_8d0E3tDk?si=je-FXEluvx5F-icd) that used the IMU of the Oculus DK1 showed that since acceleration data needs to be integrated twice in order to become displacement (positional) data, there is a significant amount of error (quadratic) introduced into the tracking, which causes drift. Therefore, reference points need to be set up in the surrounding space of the user, through either inside-out ([visual-intertial odometry](https://en.wikipedia.org/wiki/Visual_odometry)) or outside-in (base-station/lighthouse) tracking.
 
-We hope to achieve a full 6DoF positional tracking system with our headset using either PSMoveServiceEx, or by making use of existing open-source SLAM research projects. Many of these projects (like [Basalt](https://github.com/VladyslavUsenko/basalt-mirror)) were made on Linux, which could possibly complicate things when we get to this point in our project. While ambitious, I hope to have a version in the future that uses a Raspberry Pi 5 (or similar board) integrated into the HMD design that can handle all of the tracking computation, much like Apple's R1 processor.
+We hope to achieve a full 6DoF positional tracking system with our headset using either [PSMoveServiceEx](https://github.com/psmoveservice/PSMoveService), or by making use of existing open-source SLAM research projects that can create '[point clouds](https://en.wikipedia.org/wiki/Point_cloud)' (or similar) of the surrounding space and use this information as reference points. Many of these projects/papers (like [Basalt](https://github.com/VladyslavUsenko/basalt-mirror)) were made on Linux, which could possibly complicate things when we get to this point in our project. While ambitious, I hope to have a version in the future that uses a Raspberry Pi 5 (or similar board) with cameras and depth sensors integrated into the HMD design that can handle all of the tracking computation, much like Apple's R1 processor.
 
 ### designing around lenses
 
