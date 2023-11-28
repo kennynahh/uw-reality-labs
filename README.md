@@ -4,7 +4,7 @@
 
 ## About
 
-"Reality from Scratch" is the moniker for a newly founded design team at the University of Waterloo, which offers students the opportunity to engage directly with virtual reality (VR) technologies. This initiative focuses on providing practical experience in VR, covering a comprehensive range of aspects including hardware, software, drivers, and ergonomics, among others. This repository is primarily maintained by me - please reach out if you have any questions.
+Reality from Scratch is a newly founded design team at the University of Waterloo, which offers students the opportunity to engage directly with virtual reality (VR) technologies. This initiative focuses on providing practical experience in VR, covering a comprehensive range of aspects including hardware, software, drivers, and ergonomics, among others. This repository is primarily maintained by me - please reach out if you have any questions.
 
 ## Overview
 
@@ -66,6 +66,8 @@ A large portion of our research comes from helpful articles and sources from com
 
 [WalkerDev (Hackaday.io) - Easy "Pancake Lenses"](https://hackaday.io/project/187343-easy-pancake-lenses)
 
+[RoNIN: Robust Neural Inertial Navigation](https://ronin.cs.sfu.ca/)
+
 Visual-Inertial Mapping with Non-Linear Factor Recovery, V. Usenko, N. Demmel, D. Schubert, J. Stückler, D. Cremers, In IEEE Robotics and Automation Letters (RA-L) [DOI:10.1109/LRA.2019.2961227] [arXiv:1904.06504].
 
-Originally created November 23, 2023.
+*Originally created November 23, 2023.*
