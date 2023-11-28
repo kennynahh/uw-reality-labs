@@ -4,7 +4,7 @@
 
 ## About
 
-"Reality from Scratch" is a newly founded collaborative team at the University of Waterloo, offering students the opportunity to engage directly with virtual reality (VR) technologies. This initiative focuses on providing practical experience in VR, covering a comprehensive range of aspects including hardware, software, drivers, and ergonomics, among others. This repository is primarily maintained by me - please reach out if you have any questions.
+"Reality from Scratch" is the moniker for a newly founded design team at the University of Waterloo, which offers students the opportunity to engage directly with virtual reality (VR) technologies. This initiative focuses on providing practical experience in VR, covering a comprehensive range of aspects including hardware, software, drivers, and ergonomics, among others. This repository is primarily maintained by me - please reach out if you have any questions.
 
 ## Overview
 
@@ -20,7 +20,7 @@ Based off of open-source guides, the team has been building our very own, fully 
 | Housing | 3D-printed | *varies* |
 | Lenses | $⌀=40mm,$ $f = 50mm$ fresnels | 2 |
 
-The Ardiuno Pro Micro is a good choice since it supports USB HID. HID is generally more optimized for smaller, more frequent packets of data vs. serial, which is better for our use since we'll be sending small but very frequent data from our IMU. In terms of IMU choice, any that supports [FastIMU](https://github.com/LiquidCGS/FastIMU) will work. Any display will work as well - there are a plethora of options on Aliexpress. We talk more about lenses further below.
+The Ardiuno Pro Micro is a good choice since it supports USB HID. The USB HID class is generally more optimized for smaller, more frequent packets of data vs. serial, which is better for our use since we'll be sending small but very frequent data from our IMU. In terms of IMU choice, any that supports [FastIMU](https://github.com/LiquidCGS/FastIMU) will work. Any display will work as well - there are a plethora of options on Aliexpress. We talk more about lenses further below.
 
 For a comphrehensive guide on how to build a basic HMD, check out project docs from other DIY VR projects, like [HadesVR's](https://github.com/HadesVR/HadesVR/blob/main/docs/DocsIndex.md).
 
@@ -67,3 +67,5 @@ A large portion of our research comes from helpful articles and sources from com
 [WalkerDev (Hackaday.io) - Easy "Pancake Lenses"](https://hackaday.io/project/187343-easy-pancake-lenses)
 
 Visual-Inertial Mapping with Non-Linear Factor Recovery, V. Usenko, N. Demmel, D. Schubert, J. Stückler, D. Cremers, In IEEE Robotics and Automation Letters (RA-L) [DOI:10.1109/LRA.2019.2961227] [arXiv:1904.06504].
+
+Originally created November 23, 2023.
