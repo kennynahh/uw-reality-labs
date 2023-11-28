@@ -8,7 +8,7 @@
 
 ## Overview
 
-Based off of open-source guides, we have been building our very own, fully custom VR headset. So far, we have soldered an inertial measurement unit (IMU) and microcontroller unit (MCU) together, and gotten real-time motion vector data translated into SteamVR with drivers forked from the OpenVR SDK. We then routed the SteamVR output to our VR displays, which will soon have accompanying fresnel lenses and a 3D-printed housing.
+Based off of open-source guides, the team has been building our very own, fully custom VR headset. So far, we have soldered an inertial measurement unit (IMU) and microcontroller unit (MCU) together, and gotten real-time motion vector data translated into SteamVR with drivers forked from the OpenVR SDK. We then routed the SteamVR output to our VR displays, which will soon have accompanying fresnel lenses and a 3D-printed housing.
 
 ### Basic HMD Hardware
 
@@ -36,9 +36,11 @@ SteamVR is the only universal platform with accessible driver SDKs. It is an eas
 
 ### Tracking
 
-While the accelerometer in IMUs can technically be used for positional tracking, it is just not possible for it to be accurate enough on its own. A positional tracking demo found on [YouTube](https://youtu.be/_q_8d0E3tDk?si=je-FXEluvx5F-icd) that used the IMU of the Oculus DK1 showed that since acceleration data needs to be integrated twice in order to become displacement (positional) data, there is a significant amount of error (quadratic) introduced into the tracking, which causes drift. Therefore, reference points need to be set up in the surrounding space of the user, through either inside-out ([visual-intertial odometry](https://en.wikipedia.org/wiki/Visual_odometry)) or outside-in (base-station/lighthouse) tracking.
+While the accelerometer in IMUs can technically be used for positional tracking, it is just not possible for it to be accurate enough on its own. A positional tracking demo found on [YouTube](https://youtu.be/_q_8d0E3tDk?si=je-FXEluvx5F-icd) that used the IMU of the Oculus DK1 showed that since acceleration data needs to be integrated twice in order to become displacement (positional) data, there is a significant amount of error (quadratic) introduced into the tracking over time (in the order of meters per second), which causes drift. Therefore, reference points need to be set up in the surrounding space of the user, through either inside-out ([visual-intertial odometry](https://en.wikipedia.org/wiki/Visual_odometry)) or outside-in (base-station/lighthouse) tracking.
 
-We hope to achieve a full 6DoF positional tracking system with our headset using either [PSMoveServiceEx](https://github.com/psmoveservice/PSMoveService), or by making use of existing open-source SLAM research projects that can create '[point clouds](https://en.wikipedia.org/wiki/Point_cloud)' (or similar) of the surrounding space and use this information as reference points. Many of these projects/papers (like [Basalt](https://github.com/VladyslavUsenko/basalt-mirror)) were made on Linux, which could possibly complicate things when we get to this point in our project. While ambitious, I hope to have a version in the future that uses a Raspberry Pi 5 (or similar board) with cameras and depth sensors integrated into the HMD design that can handle all of the tracking computation, much like Apple's R1 processor.
+Knowing this helps us understand how modern standalone and PC VR headsets have positional tracking. On Oculus's "Cresent Bay" prototype and (consequently) the Rift CV1, for example, the IMU was almost purely used for positionally tracking fast movements, but the external camera would track the "constellations" (IR LEDs in array) on the HMD and Touch controllers and continously correct the IMU's positional error that, without the external camera, would quadratically increase over time.
+
+We hope to achieve a full 6DoF positional tracking system with our headset using either [PSMoveServiceEx](https://github.com/psmoveservice/PSMoveService), or by making use of existing open-source SLAM research projects that can create '[point clouds](https://en.wikipedia.org/wiki/Point_cloud)' (or similar) of the surrounding space and use this information as reference points. Many of these projects/papers (like [Basalt](https://github.com/VladyslavUsenko/basalt-mirror)) were made on Linux, which could possibly complicate things when we get to this point in our project. While ambitious, we hope to have a version in the future that uses a Raspberry Pi 5 (or similar board) with cameras and depth sensors integrated into the HMD design that can handle all of the tracking computation, much like Apple's R1 processor.
 
 ### Designing around lenses
 
@@ -50,4 +52,18 @@ We picked [fresnel](https://xinreality.com/wiki/Fresnel_lens) lenses for now, si
 
 Reality from Scratch draws inspiration from and utilizes resources and knowledge from existing open-source projects, such as Relativty and HadesVR. We really appreciate the members of the DIY VR community who have put in their best efforts to maintain the open-source community.
 
-A large portion of our research comes from helpful articles and sources from companies like Valve, and from initiatives like XinReality. These and other useful resources are cited throughout this document; we encourage you to read them.
+A large portion of our research comes from helpful articles and sources from companies like Valve, and from initiatives like XinReality. These and other useful resources are cited throughout this document, and repeated below; we encourage you to read them.
+
+[XinReality - Frensel Lenses](https://xinreality.com/wiki/Fresnel_lens)
+
+[Doc-Ok.org - Hacking the Oculus DK2](http://doc-ok.org/?p=1095)
+
+[Visual odometry - Wikipedia](https://en.wikipedia.org/wiki/Visual_odometry)
+
+[Valve Software - Valve Index Deep Dive](https://www.valvesoftware.com/en/index/deep-dive/)
+
+[LiquidCGS - HadesVR](https://github.com/HadesVR/HadesVR)
+
+[WalkerDev (Hackaday.io) - Easy "Pancake Lenses"](https://hackaday.io/project/187343-easy-pancake-lenses)
+
+Visual-Inertial Mapping with Non-Linear Factor Recovery, V. Usenko, N. Demmel, D. Schubert, J. Stückler, D. Cremers, In IEEE Robotics and Automation Letters (RA-L) [DOI:10.1109/LRA.2019.2961227] [arXiv:1904.06504].
