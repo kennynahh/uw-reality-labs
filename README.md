@@ -4,11 +4,13 @@
 
 ## About
 
-Reality from Scratch is a newly founded design team at the University of Waterloo, which offers students the opportunity to engage directly with virtual reality (VR) technologies. This initiative focuses on providing practical experience in VR, covering a comprehensive range of aspects including hardware, software, drivers, and ergonomics, among others. This repository is primarily maintained by me - please reach out if you have any questions.
+Reality from Scratch is a newly founded design team at the University of Waterloo, which offers students the opportunity to engage directly with virtual reality technologies. This initiative focuses on providing practical experience in the inner workings of consumer VR technology, covering a comprehensive range of aspects including hardware, software, drivers, and ergonomics, among others. While we are a design "team", our main focus is learning and research.
+
+This repository is primarily maintained by me - please reach out if you have any questions.
 
 ## Overview
 
-Based off of open-source guides, the team has been building our very own, fully custom VR headset. So far, we have soldered an inertial measurement unit (IMU) and microcontroller unit (MCU) together, and gotten real-time motion vector data translated into SteamVR with drivers forked from the OpenVR SDK. We then routed the SteamVR output to our VR displays, which will soon have accompanying fresnel lenses and a 3D-printed housing.
+Based off of open-source guides, we are building our very own, fully custom VR headset. We have soldered an inertial measurement unit (IMU) and microcontroller unit (MCU) together, and gotten real-time motion vector data translated into SteamVR with drivers forked from the OpenVR SDK. We then routed the SteamVR output to our VR displays, which will soon have accompanying fresnel lenses and a 3D-printed housing. In addition, we have recently recieved many components for our controllers, which we'll dive into deeper below.
 
 ### Basic HMD Hardware
 
@@ -22,15 +24,17 @@ Based off of open-source guides, the team has been building our very own, fully 
 
 The Ardiuno Pro Micro is a good choice since it supports USB HID. The USB HID class is generally more optimized for smaller, more frequent packets of data vs. serial, which is better for our use since we'll be sending small but very frequent data from our IMU. In terms of IMU choice, any that supports [FastIMU](https://github.com/LiquidCGS/FastIMU) will work. Any display will work as well - there are a plethora of options on Aliexpress. We talk more about lenses further below.
 
-For a comphrehensive guide on how to build a basic HMD, check out project docs from other DIY VR projects, like [HadesVR's](https://github.com/HadesVR/HadesVR/blob/main/docs/DocsIndex.md).
+For a comphrehensive guide on how to build an HMD, check out project docs from other DIY VR projects, like [HadesVR's](https://github.com/HadesVR/HadesVR/blob/main/docs/DocsIndex.md), or join the Reality from Scratch team!
 
-### Controllers (coming soon!)
+<iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVNJcqOgk=/?moveToViewport=-579,-636,856,934&embedId=212478437160" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
 
-Custom PCBs and other various electrical components have been ordered for 2 DIY Vive Wand-like controllers, which will be based off of [this](https://github.com/HadesVR/Wand-Controller) WIP open-source guide by LiquidCGS (creator of HadesVR). Each controller will have an IMU, a rechargeable battery, RF transceivers, tactile buttons, triggers, and joysticks. The HMD's microcontroller will also be upgraded and moved onto a central PCB.
+### Controllers (coming very soon!)
+
+Our team has received custom PCBs and other various electrical components for the build of 2 DIY Vive Wand-like controllers, which will be based off of [this](https://github.com/HadesVR/Wand-Controller) WIP open-source guide by LiquidCGS (creator of HadesVR). Each controller will have an IMU, a rechargeable battery, RF transceivers, tactile buttons, triggers, and joysticks. The HMD's microcontroller will also be upgraded and moved onto a central PCB.
 
 ### Drivers
 
-SteamVR is the only universal platform with accessible driver SDKs. It is an easy choice to pick for an open-source project. While we hope in the future to build our own drivers from the OpenVR SDK, for now (in our very early stage), we're going to borrow drivers from [HadesVR](https://github.com/HadesVR/HadesVR), an existing project on DIY VR. These drivers can be found [here](https://github.com/kennynahh/reality-from-scratch/tree/main/drivers). They should be placed in the drivers folder in the SteamVR file path.
+SteamVR is the only universal platform with accessible driver SDKs. It is an easy choice to pick for an open-source project. While we hope in the future to build our own drivers from the OpenVR SDK, for now (in our very early stage), we're going to borrow drivers from [HadesVR](https://github.com/HadesVR/HadesVR), an existing project on DIY VR. These drivers can be found [here](https://github.com/kennynahh/reality-from-scratch/tree/main/drivers). They should be placed in the drivers folder in the SteamVR installation path.
 
 ## Ideation
 
