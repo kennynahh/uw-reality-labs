@@ -26,7 +26,11 @@ The Ardiuno Pro Micro is a good choice since it supports USB HID. The USB HID cl
 
 For a comphrehensive guide on how to build an HMD, check out project docs from other DIY VR projects, like [HadesVR's](https://github.com/HadesVR/HadesVR/blob/main/docs/DocsIndex.md), or join the Reality from Scratch team!
 
-<iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVNJcqOgk=/?moveToViewport=-579,-636,856,934&embedId=212478437160" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+Here's a simple flow chart of the how the different components of the VR device interact with each other:
+
+<div style="border-radius: 10px; overflow: hidden;">
+<img src="End-to-End PC VR Interface.jpg" alt="End-to-End PC VR Interface" style="width: 50%; height: auto;"> </div>
+
 
 ### Controllers (coming very soon!)
 
