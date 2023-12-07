@@ -25,7 +25,7 @@ Based off of open-source guides, we are building our very own, fully custom VR h
 The Ardiuno Pro Micro is a good choice since it supports USB HID. The USB HID class is generally more optimized for smaller, more frequent packets of data vs. serial, which is better for our use since we'll be sending small but very frequent data from our IMU. In terms of IMU choice, any that supports [FastIMU](https://github.com/LiquidCGS/FastIMU) will work. Any display will work as well - there are a plethora of options on Aliexpress. We don't actually recommend purchasing traditional biconvex glass lenses - we had to purchase these due to time constraints. We'll explain our lens choices further below.
 
 <div>
-<img src="images/displays.jpg" alt="dual displays for VR" style="width: 50%; height: auto;">
+<img src="images/displays.jpg" alt="dual displays for VR" style="width: 50%; height: auto;"> <br>
 <figcaption><em>dual 2.9" 1440x1440p 90Hz screens we got for ~$150 CAD off Aliexpress.</em></figcaption>
     </div>
     <br>
