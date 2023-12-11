@@ -30,7 +30,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)\bin\win64\</OutDir>
-    <TargetName>driver_hadesvr</TargetName>
+    <TargetName>driver_realityfromscratch</TargetName>
     <IncludePath>$(ProjectDir)\include;$(IncludePath)</IncludePath>
     <SourcePath>$(ProjectDir)\src;$(SourcePath)</SourcePath>
     <RunCodeAnalysis>false</RunCodeAnalysis>

@@ -124,7 +124,7 @@ public:
 		vr::VRProperties()->SetStringProperty(m_ulPropertyContainer, Prop_RenderModelName_String, m_sModelNumber.c_str());
 		vr::VRProperties()->SetStringProperty(m_ulPropertyContainer, Prop_SerialNumber_String, "000000");
 		vr::VRProperties()->SetBoolProperty(m_ulPropertyContainer, Prop_WillDriftInYaw_Bool, false);
-		vr::VRProperties()->SetStringProperty(m_ulPropertyContainer, Prop_ManufacturerName_String, "HADES");
+		vr::VRProperties()->SetStringProperty(m_ulPropertyContainer, Prop_ManufacturerName_String, "RealityfromScratch");
 		vr::VRProperties()->SetStringProperty(m_ulPropertyContainer, Prop_TrackingFirmwareVersion_String, "1.0");
 		vr::VRProperties()->SetStringProperty(m_ulPropertyContainer, Prop_HardwareRevision_String, "1.0");
 		vr::VRProperties()->SetBoolProperty(m_ulPropertyContainer, Prop_DeviceIsWireless_Bool, false);
@@ -518,7 +518,7 @@ public:
 
 	virtual EVRInitError Activate( vr::TrackedDeviceIndex_t unObjectId )
 	{
-		DriverLog("[HadesVR] Initializing controller %d",ControllerIndex);
+		DriverLog("[RealityfromScratch] Initializing controller %d",ControllerIndex);
 		switch (ControllerIndex)
 		{
 		case 1:
@@ -682,7 +682,7 @@ public:
 
 	virtual EVRInitError Activate(vr::TrackedDeviceIndex_t unObjectId)
 	{
-		DriverLog("[HadesVR] Initializing tracker %d", TrackerIndex);
+		DriverLog("[RealityFromScratch] Initializing tracker %d", TrackerIndex);
 		switch (TrackerIndex)
 		{
 		case 1:
@@ -911,7 +911,7 @@ EVRInitError CServerDriver_Sample::Init( vr::IVRDriverContext *pDriverContext )
 	InitDriverLog( vr::VRDriverLog() );
 
 	DriverLog("=========================================================================");
-	DriverLog("========================= HadesVR Version %s ==========================", DriverVersion);
+	DriverLog("========================= RealityfromScratch ==========================");
 	DriverLog("=========================================================================");
 
 	//this is stupid

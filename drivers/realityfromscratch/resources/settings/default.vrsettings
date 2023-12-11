@@ -3,8 +3,8 @@
 		"TransportMode" : "HID",
 		"HID_VID" : 9025,
 		"HID_PID" : 32822,
-		"UART_Port" : "COM30",
-		"UART_Baudrate" : 115200,
+		"UART_Port" : "COM73",
+		"UART_Baudrate" : 230400,
 		"PSMSTrackerFrequency" : 60,		
 		"EnableDirectMode" : false,
 		"EDID_VID" : 6225,
@@ -20,16 +20,16 @@
 		"IPD" : 0.061,
 		"FOV" : 95,
 		"EyeReliefMeters" : 0.0,
-		"windowWidth" : 2560,
-		"windowHeight" : 1440,
-		"renderWidth" : 1280,
-		"renderHeight" : 1440,
+		"windowWidth" : 1920,
+		"windowHeight" : 1080,
+		"renderWidth" : 1920,
+		"renderHeight" : 1080,
 		"displayFrequency" : 60,
-		"windowX" : 1920,
+		"windowX" : 0,
 		"windowY" : 0,		
 		"ScreenOffsetX" : 0,
 		"ScreenOffsetY" : 0,
-		"ViewportZoom" : 0.8,
+		"ViewportZoom" : 1.2,
 		"DistanceBetweenLenses" : 0.061,
 		"DistanceBetweenViews" : 0.061,
 		"JankUVOffset" : 0.0,
@@ -53,57 +53,57 @@
 		"Blue_K3" : 0.42
    },
    "HMD" : {
-   		"serialNumber" : "HADES",
-		"modelNumber" : "HADES",
+   		"serialNumber" : "fromScratch",
+		"modelNumber" : "fromScratch",
 		"EnableHMD" : true,
 		"MinFilterBeta" : 0.01,
 		"MaxFilterBeta" : 0.35,
 		"UseAccelerometers" : true,
 		
-		"Camera_Kalman_Measurement_Uncertainty" : 5.0,
-		"Camera_Kalman_Estimation_Uncertainty" : 1.5,
-		"Camera_Kalman_Process_Noise" : 10.0,
+		"Camera_Kalman_Measurement_Uncertainty" : 4.0,
+		"Camera_Kalman_Estimation_Uncertainty" : 1.0,
+		"Camera_Kalman_Process_Noise" : 7.0,
 		
 		"IMU_Kalman_Measurement_Uncertainty" : 2.0,
 		"IMU_Kalman_Estimation_Uncertainty" : 5.0,
-		"IMU_Kalman_Process_Noise" : 8.0,
+		"IMU_Kalman_Process_Noise" : 7.0,
 		
 		"HMDYawOffset" : 0.0,
 		"HMDPitchOffset" : 0.0,
 		"HMDRollOffset" : 0.0,
 		
-		"HMDXOffset" : 0.0,
-		"HMDYOffset" : 0.0,
-		"HMDZOffset" : 0.0
+		"HMDXOffset" : 0.00,
+		"HMDYOffset" : -0.00,
+		"HMDZOffset" : -0.00
    },
    "Controllers" : {
    		"EnableControllers" : true,
 		"ControllerMode" : 0,
 		"UseAccelerometers" : true,
-	
+		
 		"Camera_Kalman_Measurement_Uncertainty" : 2.0,
-		"Camera_Kalman_Estimation_Uncertainty" : 1.5,
-		"Camera_Kalman_Process_Noise" : 2.25,
+		"Camera_Kalman_Estimation_Uncertainty" : 1.0,
+		"Camera_Kalman_Process_Noise" : 7.5,
 		
 		"IMU_Kalman_Measurement_Uncertainty" : 2.0,
 		"IMU_Kalman_Estimation_Uncertainty" : 5.0,
-		"IMU_Kalman_Process_Noise" : 80.0,
+		"IMU_Kalman_Process_Noise" : 22.55,
 
 		"CTRLRightYawOffset" : 0.0,
 		"CTRLRightPitchOffset" : 32.0,
 		"CTRLRightRollOffset" : 0.0,
 		
-		"CTRLRightXOffset" : 0.05,
+		"CTRLRightXOffset" : 0.045,
 		"CTRLRightYOffset" : -0.035,
-		"CTRLRightZOffset" : 0.025,
+		"CTRLRightZOffset" : 0.00,
 		
 		"CTRLLeftYawOffset" : 0.0,
 		"CTRLLeftPitchOffset" : 32.0,
 		"CTRLLeftRollOffset" : 0.0,
 		
-		"CTRLLeftXOffset" : -0.05,
+		"CTRLLeftXOffset" : -0.045,
 		"CTRLLeftYOffset" : -0.035,
-		"CTRLLeftZOffset" : 0.025
+		"CTRLLeftZOffset" : 0.00
    },
    "Trackers" :{
    		"EnableTrackers" : false,

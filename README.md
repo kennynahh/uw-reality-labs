@@ -10,9 +10,9 @@ This repository is primarily maintained by me - please reach out if you have any
 
 ## Overview
 
-Based off of open-source guides, we are building our very own, fully custom VR headset. We have soldered an inertial measurement unit (IMU) and microcontroller unit (MCU) together, and gotten real-time motion vector data translated into SteamVR with drivers forked from the OpenVR SDK. We then routed the SteamVR output to our VR displays, which will soon have accompanying fresnel lenses and a 3D-printed housing. In addition, we have recently recieved many components for our controllers, which we'll dive into deeper below.
+Based off of open-source guides, we are building our very own, fully custom VR headset. We first soldered an inertial measurement unit (IMU) and microcontroller unit (MCU) together, and got real-time motion vector data translated into SteamVR with drivers forked from the OpenVR SDK. We then routed the VR compositor output to our VR displays, which will soon have accompanying lenses and a custom 3D-printed housing. In addition to the HMD, we are building Vive Wand-style controllers, which we'll dive into deeper below.
 
-### Basic HMD Hardware
+### Basic Head-Mounted Display (HMD) Hardware
 
 | **Components** | **Our Choice** | **Count** |
 | --- | --- | --- |
@@ -30,8 +30,6 @@ The Ardiuno Pro Micro is a good choice since it supports USB HID. The USB HID cl
     </div>
     <br>
 
-For a comphrehensive guide on how to build an HMD, check out project docs from other DIY VR projects, like [HadesVR's](https://github.com/HadesVR/HadesVR/blob/main/docs/DocsIndex.md), or join the Reality from Scratch team! We're working on our own build and guide, which will be coming soon&trade;.
-
 Here's a simple flow chart of the how the different components of the VR device interact with each other:
 
 <div style="border-radius: 20px 20px 20px 20px; overflow: hidden; display: flex; justify-content: center">
@@ -48,13 +46,16 @@ Our team has received custom PCBs and other various electrical components for th
 
 SteamVR is the only universal platform with accessible driver SDKs. It is an easy choice to pick for an open-source project. While we hope in the future to build our own drivers from the OpenVR SDK, for now (in our very early stage), we're going to borrow drivers from [HadesVR](https://github.com/HadesVR/HadesVR), an existing project on DIY VR. These drivers can be found [here](https://github.com/kennynahh/reality-from-scratch/tree/main/drivers). They should be placed in the drivers folder in the SteamVR installation path.
 
-## Ideation
+## Building your own Reality from Scratch
+For a comphrehensive guide on how to build an HMD, check out the guide [here](/docs/Guide.md), or join the Reality from Scratch team if you're a UWaterloo student!
+
+## Ideation & Research
 
 ### Tracking
 
 While the accelerometer in IMUs can technically be used for positional tracking, it is just not possible for it to be accurate enough on its own. A positional tracking demo found on [YouTube](https://youtu.be/_q_8d0E3tDk?si=je-FXEluvx5F-icd) that used the IMU of the Oculus DK1 showed that since acceleration data needs to be integrated twice in order to become displacement (positional) data, there is a significant amount of error (quadratic) introduced into the tracking over time (in the order of meters per second), which causes drift. Therefore, reference points need to be set up in the surrounding space of the user, through either inside-out ([visual-intertial odometry](https://en.wikipedia.org/wiki/Visual_odometry)) or outside-in (base-station/lighthouse) tracking.
 
-Knowing this helps us understand how modern standalone and PC VR headsets handle positional tracking. On Oculus's "Cresent Bay" prototype and (consequently) the Rift CV1, for example, the IMU was almost purely used for positionally tracking fast movements, but the external camera would track the "constellations" (IR LEDs in array) on the HMD and Touch controllers and continously correct the IMU's positional error that, without the external camera, would quadratically increase over time.
+Knowing this helps us understand how modern standalone and PC VR headsets handle positional tracking. On Oculus's "Cresent Bay" prototype and (consequently) the Rift CV1, for example, the IMU was almost purely used for positionally tracking fast movements, but the external camera would track the "constellations" (IR LEDs) on the HMD and Touch controllers and continously correct the IMU's positional error that, without the external camera, would quadratically increase over time.
 
 We hope to achieve a full 6DoF positional tracking system with our headset by initially using [PSMoveServiceEx](https://github.com/psmoveservice/PSMoveService), and then by working on implementing existing open-source SLAM research projects that can create '[point clouds](https://en.wikipedia.org/wiki/Point_cloud)' (or similar) of the surrounding space and use this information as reference points for postitional tracking. Many of these projects/papers (like [Basalt](https://github.com/VladyslavUsenko/basalt-mirror)) were made on Linux, which could possibly complicate things when we get to this point in our project. While ambitious, we hope to have a version in the future that uses a Raspberry Pi 5 (or similar board) with cameras and depth sensors integrated into the HMD design that can handle all of the tracking computation, much like Apple's R1 processor.
 
@@ -62,7 +63,7 @@ We hope to achieve a full 6DoF positional tracking system with our headset by in
 
 The interactions between the lenses and the user can often make or break the experience of a lot of consumer VR headsets. Popular consumer VR products like the [Valve Index](https://www.valvesoftware.com/en/index/deep-dive/) have fully adjustable lens interpupilary distance (IPD), as well as adjustable eye relief (distance of the lenses from the user's eyes). This makes this product much more accessible to a wide range of users, and serves to be more comfortable for individuals sensitiive to such changes. However, the further the lenses are from the user's eyes, the smaller the field of view (FoV) is, (given the lenses stay the same size) - and this is why it is especially important that the VR headset sits at a reasonable length from the user's face.
 
-We recommend [fresnel](https://xinreality.com/wiki/Fresnel_lens) lenses for now, since they are readily available for very low prices on platforms like Amazon and Aliexpress, and are thin and lightweight. Traditional biconvex lenses are wider, heavier (when built with glass), and usually cost more, but they may have increased visual clarity and no god rays. (due to the design of fresnels and their fine concentric lines, they can introduce god rays and other ditracting artifacts.)
+We recommend [fresnel](https://xinreality.com/wiki/Fresnel_lens) lenses for now, since they are readily available for very low prices on platforms like Amazon and Aliexpress, and are thin and lightweight. Traditional biconvex lenses are wider, heavier (when built with glass), and usually cost more, but they may have increased visual clarity and no god rays. (due to the design of fresnels and their fine concentric lines, they can introduce god rays and other distracting artifacts.)
 
 A lot of these lenses can be purchased at various focal lengths; we hope to test multiple. Depending on the focal length, the length of the headset's housing will vary, so there may be some merit in seeing the difference between shorter and longer housings (in terms of image quality, FOV, perceived weight of the HMD and how this affects comfort, etc.) Creating the mechanical design for the housing of the VR headset will be challenging, given that we'd like to include user-addressable IPD, as well as test different housing for different lenses. However, we are very excited to begin testing this once our lenses arrive.
 
