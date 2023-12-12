@@ -18,7 +18,7 @@ So, a little on our recommendations:
 
 The Ardiuno Pro Micro is a good choice since it supports USB HID. The USB HID class is generally more optimized for smaller, more frequent packets of data vs. serial, which is better for our use since we'll be sending small but very frequent data from our IMU. Other devices, like the Pro Mini and Uno, all use the serial class, which isn't optimal, as we mentioned.
 
-In terms of IMUs; While FastIMU (what we'll be using to read IMU data) supports the MPU-6050 (which is cheaper), it doesn't include a magnetometer, which could negatively affect overall tracking quality. Given that the MPU-9250 is nearly the same price on Aliexpress and Amazon, we figure most people can just purchase the better IMU.
+In terms of IMUs; While [FastIMU](https://github.com/LiquidCGS/FastIMU) (what we'll be using to read IMU data) supports the MPU-6050 (which is cheaper), it doesn't include a magnetometer, which could negatively affect overall tracking quality. Given that the MPU-9250 is nearly the same price on Aliexpress and Amazon, we figure most people can just purchase the better IMU.
 
 In terms of displays, there are two primary options individuals often end up purchasing on Aliexpress. This one [(1)](https://www.aliexpress.com/item/1005003041935114.html?spm=a2g0o.productlist.main.1.1d772bcaTyAcB7&algo_pvid=efb5f8ad-1c86-4143-a5a5-f89fa8cfbcf9&algo_exp_id=efb5f8ad-1c86-4143-a5a5-f89fa8cfbcf9-0&pdp_npi=4%40dis%21CAD%21165.17%21135.43%21%21%21118.75%21%21%402101e7f617023300085442577ef149%2112000023407618642%21sea%21CA%212846674746%21&curPageLogUid=faw9rYRIEwGB) is what we picked. It is one of the cheapest displays on the market that has a decently high resolution (1440x1440, akin to a Valve Index) and a refresh rate at 90Hz (not akin to the Index's 120Hz). 
 
@@ -40,7 +40,7 @@ Make sure that when purchasing either of these displays (or any else), you (1) p
 
 In terms of lenses, PMMA plastic (acrylic) fresnels are the easy pick. They are absolutely everywhere, are cheap, and are lighter/more compact than traditional biconvex glass lenses. Since they are everywhere, you can pick a diameter and focal length that you want. However, we went with 50mm focal length and 50mm diameter lenses, and they are what our 3D printed design is based around. You could also very well purchase a phone VR kit from Amazon or a store and put in your displays - that would work fine, but you would not know what kind of lenses you are getting.
 
-If you would like to use our 3D printed design, make sure you are using 50mm diameter / 50mm focal length lenses, preferrably biconvex glass (as these are what we used to design the housing, and are thicker than equivalent fresnel lenses). You can find the print design to download in the Reality from Scratch housing folder.
+If you would like to use our 3D printed design, make sure you are using 50mm diameter / 50mm focal length lenses, preferrably biconvex glass (as these are what we used to design the housing, and are thicker than equivalent fresnel lenses). You can find the print design to download in the Reality from Scratch housing folder (coming soon).
 
 ### Beginning the build
 
@@ -58,3 +58,5 @@ We can begin by building out the brains of the HMD. This will take no time and b
     <br>
 
 Now, you can install the drivers so that SteamVR can recognize the HMD. Place the "realityfromscratch" drivers (which you can download [here](/drivers/)) within the SteamVR "drivers" folder.
+
+# WIP!

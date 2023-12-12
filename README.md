@@ -22,10 +22,16 @@ Based off of open-source guides, we are building our very own, fully custom VR h
 | Housing | 3D-printed | *varies* |
 | Lenses | $⌀=50mm,$ $f = 50mm$, biconvex, glass | 2 |
 
-The Ardiuno Pro Micro is a good choice since it supports USB HID. The USB HID class is generally more optimized for smaller, more frequent packets of data vs. serial, which is better for our use since we'll be sending small but very frequent data from our IMU. In terms of IMU choice, any that supports [FastIMU](https://github.com/LiquidCGS/FastIMU) will work. Any display will work as well - there are a plethora of options on Aliexpress. We don't actually recommend purchasing traditional biconvex glass lenses - we had to purchase these due to time constraints. We'll explain our lens choices further below.
+### 6DoF Tracking Hardware
+
+| **Components** | **Count** |
+| --- | --- |
+| PS3 Eye Camera | min 1, max 7 |
+| HadesVR/PS3 Move Controllers | 2 |
+| USB Hubs | *varies* |
 
 <div>
-<img src="images/displays.jpg" alt="dual displays for VR" style="width: 50%; height: auto;"> <br>
+<img src="images/displays.jpg" alt="dual displays for VR" style="border-radius: 20px 20px 20px 20px; overflow: hidden; display: flex; justify-content: center"> <br>
 <figcaption><em>dual 2.9" 1440x1440p 90Hz screens we got for ~$150 CAD off Aliexpress.</em></figcaption>
     </div>
     <br>
@@ -44,12 +50,18 @@ Our team has received custom PCBs and other various electrical components for th
 
 ### Drivers
 
-SteamVR is the only universal platform with accessible driver SDKs. It is an easy choice to pick for an open-source project. While we hope in the future to build our own drivers from the OpenVR SDK, for now (in our very early stage), we're going to borrow drivers from [HadesVR](https://github.com/HadesVR/HadesVR), an existing project on DIY VR. These drivers can be found [here](https://github.com/kennynahh/reality-from-scratch/tree/main/drivers). They should be placed in the drivers folder in the SteamVR installation path.
+SteamVR is the only universal platform with accessible driver SDKs. It is an easy choice to pick for an open-source project. The drivers for Reality from Scratch can be found [here](https://github.com/kennynahh/reality-from-scratch/tree/main/drivers).
 
 ## Building your own Reality from Scratch
-For a comphrehensive guide on how to build an HMD, check out the guide [here](/docs/Guide.md), or join the Reality from Scratch team if you're a UWaterloo student!
+For a comphrehensive guide on how to build an HMD, check out the guide [here](/docs/Guide.md), or join the Reality from Scratch team if you're a student at the University of Waterloo!
 
-## Ideation & Research
+<div>
+<img src="images/HadesVR_HMD_unfinished.jpg" alt="unfinished HMD module built on HadesVR PCB" style="border-radius: 20px 20px 20px 20px; overflow: hidden; display: flex; justify-content: center"> <br>
+<figcaption><em>work-in-progress HMD module built on HadesVR PCB.</em></figcaption>
+    </div>
+    <br>
+
+## Ideation
 
 ### Tracking
 
