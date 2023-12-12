@@ -31,22 +31,22 @@ Based off of open-source guides, we are building our very own, fully custom VR h
 | USB Hubs | *varies* |
 
 <div>
-<img src="images/displays.jpg" alt="dual displays for VR" style="border-radius: 20px 20px 20px 20px; overflow: hidden; display: flex; justify-content: center"> <br>
+<img src="images/displays.jpg" alt="dual displays for VR" width = "60%" height = "auto" style="border-radius: 20px 20px 20px 20px; overflow: hidden; display: flex; justify-content: center;"> <br>
 <figcaption><em>dual 2.9" 1440x1440p 90Hz screens we got for ~$150 CAD off Aliexpress.</em></figcaption>
     </div>
     <br>
 
 Here's a simple flow chart of the how the different components of the VR device interact with each other:
 
-<div style="border-radius: 20px 20px 20px 20px; overflow: hidden; display: flex; justify-content: center">
+<div style="border-radius: 20px 20px 20px 20px; overflow: hidden; display: flex; justify-content: center;">
 <img src="images/End-to-End PC VR Interface.jpg" alt="End-to-End PC VR Interface" style="width: 50%; height: auto;"> </div>
 
 ### Controllers (coming very soon!)
 
 Our team has received custom PCBs and other various electrical components for the build of 2 DIY Vive Wand-like controllers, which will be based off of [this](https://github.com/HadesVR/Wand-Controller) WIP open-source guide by LiquidCGS (creator of HadesVR). Each controller will have an IMU, a rechargeable battery, RF transceivers, tactile buttons, triggers, and joysticks. The HMD's microcontroller will also be upgraded and moved onto a central PCB. We are almost done with soldering.
 
-<div style="border-radius: 20px 20px 20px 20px; overflow: hidden; display: flex; justify-content: center">
-<img src="images/controllers_unfinished.jpg" alt="Controllers! (unfinished)" style="width: 75%; height: auto;"> </div>
+<div style="border-radius: 20px 20px 20px 20px; overflow: hidden; display: flex; justify-content: center;">
+<img src="images/controllers_unfinished.jpg" alt="Controllers! (unfinished)" style="width: 60%; height: auto;"> </div>
 
 ### Drivers
 
@@ -56,7 +56,7 @@ SteamVR is the only universal platform with accessible driver SDKs. It is an eas
 For a comphrehensive guide on how to build an HMD, check out the guide [here](/docs/Guide.md), or join the Reality from Scratch team if you're a student at the University of Waterloo!
 
 <div>
-<img src="images/HadesVR_HMD_unfinished.jpg" alt="unfinished HMD module built on HadesVR PCB" style="border-radius: 20px 20px 20px 20px; overflow: hidden; display: flex; justify-content: center"> <br>
+<img src="images/HadesVR_HMD_unfinished.jpg" alt="unfinished HMD module built on HadesVR PCB" style="border-radius: 20px 20px 20px 20px; overflow: hidden; display: flex; justify-content: center; width: 60%; height: auto;"> <br>
 <figcaption><em>work-in-progress HMD module built on HadesVR PCB.</em></figcaption>
     </div>
     <br>
