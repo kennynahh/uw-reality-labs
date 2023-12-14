@@ -1,7 +1,7 @@
 # Reality from Scratch
 
 <p align="middle">
-<img src="images/Reality From Scratch Banner.png" width="80%" height="auto">
+<img src="images/Reality From Scratch Banner.png" width="100%" height="auto">
 </p>
 
 ## About
