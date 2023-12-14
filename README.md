@@ -1,6 +1,8 @@
 # Reality from Scratch
 
-<img src="https://github.com/kennynahh/reality-from-scratch/assets/86166209/60a159f4-3cd3-422a-b64f-7fdb6bef2cae" width="100" height="100">
+<p align="middle">
+<img src="images/Reality From Scratch Banner.png" width="80%" height="auto">
+</p>
 
 ## About
 
@@ -32,15 +34,15 @@ Based off of open-source guides, we are building our very own, fully custom VR h
 
 Here's a simple flow chart of the how the different components of the VR device interact with each other:
 
-<div>
+<div align="middle">
 <img src="images/End-to-End PC VR Interface.jpg" alt="End-to-End PC VR Interface" style="width: 50%; height: auto;"> </div>
 
 ### Controllers (coming very soon!)
 
 Our team has received custom PCBs and other various electrical components for the build of 2 DIY Vive Wand-like controllers, which will be based off of [this](https://github.com/HadesVR/Wand-Controller) WIP open-source guide by LiquidCGS (creator of HadesVR). Each controller will have an IMU, a rechargeable battery, RF transceivers, tactile buttons, triggers, and joysticks. The HMD's microcontroller will also be upgraded and moved onto a central PCB. We are almost done with soldering.
 
-<div>
-<img src="images/controllers_unfinished.jpg" alt="Controllers! (unfinished)" style="width: 60%; height: auto;"> </div>
+<div align="middle">
+<img src="images/controllers_unfinished.jpg" alt="Controllers! (unfinished)" style="width: 50%; height: auto;"> </div>
 
 ### Drivers
 
@@ -49,8 +51,8 @@ SteamVR is the only universal platform with accessible driver SDKs. It is an eas
 ## Building your own Reality from Scratch
 For a comphrehensive guide on how to build your own Reality from Scratch, check out the guide [here](/docs/Guide.md), or join the Reality from Scratch team if you're a student at the University of Waterloo!
 
-<div>
-<img src="images/HadesVR_HMD_unfinished.jpg" alt="unfinished HMD module built on HadesVR PCB" style="width: 60%; height: auto;">
+<div align="middle">
+<img src="images/HadesVR_HMD_unfinished.jpg" alt="unfinished HMD module built on HadesVR PCB" style="width: 50%; height: auto;">
 <br>
 <caption><em>work-in-progress HMD module built on HadesVR PCB.</em></caption>
     </div>
@@ -84,8 +86,8 @@ The interactions between the lenses and the user can often make or break the exp
 We recommend [fresnel](https://xinreality.com/wiki/Fresnel_lens) lenses for now, since they are readily available for very low prices on platforms like Amazon and Aliexpress, and are thin and lightweight. Traditional biconvex lenses are wider, heavier (when built with glass), and usually cost more, but they may have increased visual clarity and no god rays. (due to the design of fresnels and their fine concentric lines, they can introduce god rays and other distracting artifacts.) 
 
 <p align="middle">
-  <img src="images/fresnel_plano_convex.jpg" width="200" height="auto" alt="Fresnel and equivalent plano-convex lens." style="background-color:white;"/>
-  <img src="images/fresnel_lens_collapse.jpg" width="200" height="auto" alt="Collapsing a conventional lens into an equivalent power Fresnel lens." style="background-color:white;"/> 
+  <img src="images/fresnel_plano_convex.jpg" width="200" height="300" alt="Fresnel and equivalent plano-convex lens." style="background-color:white;"/>
+  <img src="images/fresnel_lens_collapse.jpg" width="200" height="300" alt="Collapsing a conventional lens into an equivalent power Fresnel lens." style="background-color:white;"/> 
   <br>
   <caption><em>Figure 1 (left): Fresnel lens (left) and equivalent power plano-convex lens (right).</em></caption>
     <br>
