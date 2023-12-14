@@ -50,8 +50,9 @@ SteamVR is the only universal platform with accessible driver SDKs. It is an eas
 For a comphrehensive guide on how to build your own Reality from Scratch, check out the guide [here](/docs/Guide.md), or join the Reality from Scratch team if you're a student at the University of Waterloo!
 
 <div>
-<img src="images/HadesVR_HMD_unfinished.jpg" alt="unfinished HMD module built on HadesVR PCB" style="width: 60%; height: auto;"> 
-<figcaption><em>work-in-progress HMD module built on HadesVR PCB.</em></figcaption>
+<img src="images/HadesVR_HMD_unfinished.jpg" alt="unfinished HMD module built on HadesVR PCB" style="width: 60%; height: auto;">
+<br>
+<caption><em>work-in-progress HMD module built on HadesVR PCB.</em></caption>
     </div>
     <br>
 
