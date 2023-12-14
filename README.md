@@ -84,8 +84,8 @@ The interactions between the lenses and the user can often make or break the exp
 We recommend [fresnel](https://xinreality.com/wiki/Fresnel_lens) lenses for now, since they are readily available for very low prices on platforms like Amazon and Aliexpress, and are thin and lightweight. Traditional biconvex lenses are wider, heavier (when built with glass), and usually cost more, but they may have increased visual clarity and no god rays. (due to the design of fresnels and their fine concentric lines, they can introduce god rays and other distracting artifacts.) 
 
 <p align="middle">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Fresnel_lens.svg/1024px-Fresnel_lens.svg.png" width="200" height="auto" alt="Fresnel and equivalent plano-convex lens." style="background-color:white;"/>
-  <img src="https://xinreality.com/mediawiki/images/1/13/Creating_a_fresnel_lens.png" width="200" height="auto" alt="Collapsing a conventional lens into an equivalent power Fresnel lens." style="background-color:white;"/> 
+  <img src="images/fresnel_plano_convex.jpg" width="200" height="auto" alt="Fresnel and equivalent plano-convex lens." style="background-color:white;"/>
+  <img src="images/fresnel_lens_collapse.jpg" width="200" height="auto" alt="Collapsing a conventional lens into an equivalent power Fresnel lens." style="background-color:white;"/> 
   <br>
   <caption><em>Figure 1 (left): Fresnel lens (left) and equivalent power plano-convex lens (right).</em></caption>
     <br>
