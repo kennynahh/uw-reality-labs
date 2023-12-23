@@ -1,20 +1,24 @@
-# Reality from Scratch
+# UW Reality Labs
 
 <p align="middle">
-<img src="images/Reality From Scratch Banner.png" width="100%" height="auto">
+<img src="images/uw-reality-labs/UW Reality Labs Banner.png" width="100%" height="auto">
 </p>
 
 ## About
 
-Reality from Scratch is a newly founded design team at the University of Waterloo, which offers students the opportunity to engage directly with virtual reality technologies. This initiative focuses on providing practical experience in the inner workings of consumer VR technology, covering a comprehensive range of aspects including hardware, software, drivers, and ergonomics, among others. While we are a design "team", our main focus is learning and research.
+UW Reality Labs is a newly founded design team at the University of Waterloo, which offers students the opportunity to engage directly with virtual reality technologies. This initiative focuses on providing practical experience in the inner workings of consumer VR technology, covering a comprehensive range of aspects including hardware, software, drivers, and ergonomics, among others. While we are a design "team", our main focus is learning and research.
 
-This repository is primarily maintained by me - please reach out if you have any questions.
+This repository is primarily maintained by me - please reach out if you have any questions, or join our [Discord](https://discord.gg/Uv7We55DrX).
 
 ## Overview
 
-Based off of open-source guides, we are building our very own, fully custom VR headset. We first soldered an inertial measurement unit (IMU) and microcontroller unit (MCU) together, and got real-time motion vector data translated into SteamVR with drivers forked from the OpenVR SDK. We then routed the VR compositor output to our VR displays, which will soon have accompanying lenses and a custom 3D-printed housing. In addition to the HMD, we are building Vive Wand-style controllers, which we'll dive into deeper below.
+Based off of open-source guides, we are building our very own, fully custom VR headset. We call it **Reality from Scratch**.
 
-### Basic Head-Mounted Display (HMD) Hardware
+We first soldered an inertial measurement unit (IMU) and microcontroller unit (MCU) together, and got real-time motion vector data translated into SteamVR with drivers forked from the OpenVR SDK. We then routed the VR compositor output to our VR displays, which will soon have accompanying lenses and a custom 3D-printed housing. In addition to the HMD, we are building Vive Wand-style controllers, which we'll dive into deeper below.
+
+From this headset, we plan to create other systems, such as an inside-out 6DoF tracking solution using visual-inertial odometry.
+
+### Basic HMD Hardware
 
 | **Components** | **Our Choice** | **Count** |
 | --- | --- | --- |
@@ -46,11 +50,11 @@ Our team has received custom PCBs and other various electrical components for th
 
 ### Drivers
 
-SteamVR is the only universal platform with accessible driver SDKs. It is an easy choice to pick for an open-source project. The drivers for Reality from Scratch can be found [here](https://github.com/kennynahh/reality-from-scratch/tree/main/drivers).
+SteamVR is the only universal platform with accessible driver SDKs (from Valve's OpenVR). It is an easy choice to pick for an open-source project. The drivers for Reality from Scratch can be found [here](https://github.com/kennynahh/reality-from-scratch/tree/main/drivers).
 
 ## Building your own Reality from Scratch
 
-For a comphrehensive guide on how to build your own Reality from Scratch, check out the guide [here](/docs/Guide.md), or join the Reality from Scratch team if you're a student at the University of Waterloo!
+For a comphrehensive guide on how to build your own Reality from Scratch - our open-source, DIY HMD, check out the guide [here](Reality-From-Scratch.md), or join the UW Reality Labs team if you're a student at the University of Waterloo!
 
 <div align="middle">
 <img src="images/HadesVR_HMD_unfinished.jpg" alt="unfinished HMD module built on HadesVR PCB" style="width: 50%; height: auto;">
@@ -79,11 +83,6 @@ We hope to achieve a full 6DoF positional tracking system with our headset by in
 
 The interactions between the lenses and the user can often make or break the experience of a lot of consumer VR headsets. Popular consumer VR products like the [Valve Index](https://www.valvesoftware.com/en/index/deep-dive/) have fully adjustable lens interpupilary distance (IPD), as well as adjustable eye relief (distance of the lenses from the user's eyes). This makes this product much more accessible to a wide range of users, and serves to be more comfortable for individuals sensitiive to such changes. However, the further the lenses are from the user's eyes, the smaller the field of view (FoV) is, (given the lenses stay the same size) - and this is why it is especially important that the VR headset sits at a reasonable length from the user's face.
 
-<video align="middle" width="50%" height="auto">
-  <source src="https://cdn.cloudflare.steamstatic.com/valvesoftware/images/index/videos/IndexEyeRelief.webm" type="video/webm">
-  Your browser does not support the video format.
-</video>
-
 We recommend [fresnel](https://xinreality.com/wiki/Fresnel_lens) lenses for now, since they are readily available for very low prices on platforms like Amazon and Aliexpress, and are thin and lightweight. Traditional biconvex lenses are wider, heavier (when built with glass), and usually cost more, but they may have increased visual clarity and no god rays. (due to the design of fresnels and their fine concentric lines, they can introduce god rays and other distracting artifacts.)
 
 <p align="middle">
@@ -101,7 +100,9 @@ A lot of these simpler lenses can be purchased at a wide assortment of focal len
 
 ## Acknowledgements
 
-Reality from Scratch draws inspiration from and utilizes resources and knowledge from existing open-source projects, such as Relativty and HadesVR. We really appreciate the members of the DIY VR community who have put in their best efforts to maintain the open-source community.
+The Reality from Scratch HMD draws inspiration from and utilizes resources and knowledge from existing open-source projects, such as Relativty and HadesVR. We really appreciate the members of the DIY VR community who have put in their best efforts to maintain this open-source knowledge.
+
+In addition, the UW Reality Labs design team draws obvious inspiration from Meta's own Reality Labs.
 
 ## Resources
 
