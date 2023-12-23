@@ -49,6 +49,7 @@ Our team has received custom PCBs and other various electrical components for th
 SteamVR is the only universal platform with accessible driver SDKs. It is an easy choice to pick for an open-source project. The drivers for Reality from Scratch can be found [here](https://github.com/kennynahh/reality-from-scratch/tree/main/drivers).
 
 ## Building your own Reality from Scratch
+
 For a comphrehensive guide on how to build your own Reality from Scratch, check out the guide [here](/docs/Guide.md), or join the Reality from Scratch team if you're a student at the University of Waterloo!
 
 <div align="middle">
@@ -83,11 +84,11 @@ The interactions between the lenses and the user can often make or break the exp
   Your browser does not support the video format.
 </video>
 
-We recommend [fresnel](https://xinreality.com/wiki/Fresnel_lens) lenses for now, since they are readily available for very low prices on platforms like Amazon and Aliexpress, and are thin and lightweight. Traditional biconvex lenses are wider, heavier (when built with glass), and usually cost more, but they may have increased visual clarity and no god rays. (due to the design of fresnels and their fine concentric lines, they can introduce god rays and other distracting artifacts.) 
+We recommend [fresnel](https://xinreality.com/wiki/Fresnel_lens) lenses for now, since they are readily available for very low prices on platforms like Amazon and Aliexpress, and are thin and lightweight. Traditional biconvex lenses are wider, heavier (when built with glass), and usually cost more, but they may have increased visual clarity and no god rays. (due to the design of fresnels and their fine concentric lines, they can introduce god rays and other distracting artifacts.)
 
 <p align="middle">
   <img src="images/fresnel_plano_convex.jpg" width="200" height="300" alt="Fresnel and equivalent plano-convex lens." style="background-color:white;"/>
-  <img src="images/fresnel_lens_collapse.jpg" width="200" height="300" alt="Collapsing a conventional lens into an equivalent power Fresnel lens." style="background-color:white;"/> 
+  <img src="images/fresnel_lens_collapse.jpg" width="200" height="300" alt="Collapsing a conventional lens into an equivalent power Fresnel lens." style="background-color:white;"/>
   <br>
   <caption><em>Figure 1 (left): Fresnel lens (left) and equivalent power plano-convex lens (right).</em></caption>
     <br>
@@ -106,6 +107,9 @@ Reality from Scratch draws inspiration from and utilizes resources and knowledge
 
 A large portion of our research comes from helpful articles and sources from companies like Valve, and from initiatives like XinReality. These and other useful resources are cited throughout this document, and repeated below; we encourage you to read them.
 
+[Hands-On with Meta's New VR Headset Prototypes! - Tested (YouTube)](https://www.youtube.com/watch?v=x6AOwDttBsc)
+<em>This one we really recommend watching.</em>
+
 [XinReality - Frensel Lenses](https://xinreality.com/wiki/Fresnel_lens)
 
 [Doc-Ok.org - Hacking the Oculus DK2](http://doc-ok.org/?p=1095)
@@ -122,7 +126,17 @@ A large portion of our research comes from helpful articles and sources from com
 
 [Aspheric Lens - Wikipedia](https://en.wikipedia.org/wiki/Aspheric_lens)
 
+[Dispersion (optics) - Wikipedia](https://en.wikipedia.org/wiki/Dispersion_(optics))
+
+[Augmented and Mixed Reality Optical See-Through Combiners Based on Plastic Optics](https://sid.onlinelibrary.wiley.com/doi/10.1002/msid.1226)
+
+[Achromatic lens - Wikipedia](https://en.wikipedia.org/wiki/Achromatic_lens)
+
+[Abbe number - Wikipedia](https://en.wikipedia.org/wiki/Abbe_number)
+
 [How Varjo delivers human eye resolution - Varjo](https://varjo.com/blog/introducing-bionic-display-how-varjo-delivers-human-eye-resolution/)
+
+[Hypervision | XR240.Gen2](https://www.hypervision.ai/configure-xr240)
 
 Visual-Inertial Mapping with Non-Linear Factor Recovery, V. Usenko, N. Demmel, D. Schubert, J. Stückler, D. Cremers, In IEEE Robotics and Automation Letters (RA-L) [DOI:10.1109/LRA.2019.2961227] [arXiv:1904.06504].
 
