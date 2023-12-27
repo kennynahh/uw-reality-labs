@@ -16,7 +16,7 @@ Based off of open-source guides, we are building our very own, fully custom VR h
 
 We first soldered an inertial measurement unit (IMU) and microcontroller unit (MCU) together, and got real-time motion vector data translated into SteamVR with drivers forked from the OpenVR SDK. We then routed the VR compositor output to our VR displays, which will soon have accompanying lenses and a custom 3D-printed housing. In addition to the HMD, we are building Vive Wand-style controllers, which we'll dive into deeper below.
 
-From this headset, we plan to create other systems, such as an inside-out 6DoF tracking solution using visual-inertial odometry.
+From this headset, we plan to build other systems, such as an inside-out 6DoF tracking solution using visual-inertial odometry, or a varifocal lens solution using eye tracking and motors or voice coils.
 
 ### Basic HMD Hardware
 
@@ -65,6 +65,8 @@ For a comphrehensive guide on how to build your own Reality from Scratch - our o
 
 ## Research
 
+This section dives into the various technological barriers when desinging comfortable and user-friendly VR products, and how these obstacles can be overcome. We talk about the limitations of IMUs when considering 6DoF tracking and the importance of lenses and optical technologies in VR.
+
 ### Tracking
 
 While the accelerometer in IMUs can technically be used for positional tracking, it is just not possible for it to be accurate enough on its own. A positional tracking demo found on [YouTube](https://youtu.be/_q_8d0E3tDk?si=je-FXEluvx5F-icd) that used the IMU of the Oculus DK1 showed that since acceleration data needs to be integrated twice in order to become displacement (positional) data, there is a significant amount of error (quadratic) introduced into the tracking over time (in the order of meters per second), which causes drift. Therefore, reference points need to be set up in the surrounding space of the user, through either inside-out ([visual-intertial odometry](https://en.wikipedia.org/wiki/Visual_odometry)) or outside-in (base-station/lighthouse) tracking.
@@ -72,18 +74,30 @@ While the accelerometer in IMUs can technically be used for positional tracking,
 Knowing this helps us understand how modern standalone and PC VR headsets handle positional tracking. On Oculus's "Cresent Bay" prototype and (consequently) the Rift CV1, for example, the IMU was almost purely used for positionally tracking fast movements, but the external camera would track the "constellations" (IR LEDs) on the HMD and Touch controllers and continously correct the IMU's positional error that, without the external camera, would quadratically increase over time.
 
 <p align="middle">
-  <img src="https://duet-cdn.vox-cdn.com/thumbor/0x0:4001x2240/1200x800/filters:focal(2000x1120:2001x1121):format(webp)/cdn.vox-cdn.com/uploads/chorus_asset/file/15295653/Crescent-Bay-Front-Pers-on-Light.0.0.1426288038.jpg" width="50%" height="auto" alt="Fresnel and equivalent plano-convex lens." style="background-color:white;"/>
+  <img src="https://duet-cdn.vox-cdn.com/thumbor/0x0:4001x2240/1200x800/filters:focal(2000x1120:2001x1121):format(webp)/cdn.vox-cdn.com/uploads/chorus_asset/file/15295653/Crescent-Bay-Front-Pers-on-Light.0.0.1426288038.jpg" width="500" height="auto" alt="Fresnel and equivalent plano-convex lens." style="background-color:white;"/>
   <br>
   <caption>The Oculus Cresent Bay prototype, with its IR LEDs.</caption>
 </p>
 
 We hope to achieve a full 6DoF positional tracking system with our headset by initially using [PSMoveServiceEx](https://github.com/psmoveservice/PSMoveService). This is similar to outside-in tracking using IR LEDs, except that there is only one 'giant' LED, which emits colour on the visible spectrum of wavelength. Next, we want to work on implementing existing open-source SLAM research projects (like [Basalt](https://github.com/VladyslavUsenko/basalt-mirror)) that can create '[point clouds](https://en.wikipedia.org/wiki/Point_cloud)' (or similar) of the surrounding space and use this information as reference points for inside-out postitional tracking.
 
-### Designing around lenses
+### Optics and comfort
 
 The interactions between the lenses and the user can often make or break the experience of a lot of consumer VR headsets. Popular consumer VR products like the [Valve Index](https://www.valvesoftware.com/en/index/deep-dive/) have fully adjustable lens interpupilary distance (IPD), as well as adjustable eye relief (distance of the lenses from the user's eyes). This makes this product much more accessible to a wide range of users, and serves to be more comfortable for individuals sensitiive to such changes. However, the further the lenses are from the user's eyes, the smaller the field of view (FoV) is, (given the lenses stay the same size) - and this is why it is especially important that the VR headset sits at a reasonable length from the user's face.
 
-We recommend [fresnel](https://xinreality.com/wiki/Fresnel_lens) lenses for now, since they are readily available for very low prices on platforms like Amazon and Aliexpress, and are thin and lightweight. Traditional biconvex lenses are wider, heavier (when built with glass), and usually cost more, but they may have increased visual clarity and no god rays. (due to the design of fresnels and their fine concentric lines, they can introduce god rays and other distracting artifacts.)
+The issues regarding comfort go further. The [vergence-accommodation conflict](https://en.wikipedia.org/wiki/Vergence-accommodation_conflict) is one phenomenon that VR researchers have been working to solve for many years. It occurs when a user perceives an object in VR to be a certain distance away, but the user's eyes are focused at a a different distance, due to the lenses in the VR headset only being able to show one fixed focal distance (the distance between the user and the object of focus). This focal distance is said to be at around 2m for most consumer VR headets today, meaning that any object closer than or further than 2m away in a virtual scene will look blurry and be unable to focus on naturally. This can cause eye strain and motion sickness, which is likely a deal-breaker for many would-be new VR users. To solve this problem, many 
+
+<p align="middle">
+  <img src="images/Vergence-Accommodation_Conflict_Diagram.jpg" width="500" height="auto" alt="Vergence-accommodation conflict diagram." style="background-color:white;"/>
+  <br>
+  <caption>Vergence-accommodation conflict example. [1]</caption>
+</p>
+
+Meta Reality Labs, then called Oculus Research, revealed that they were working on a varifocal VR headset prototype as early as 2018. The
+
+## Lens recommendations
+
+We recommend [fresnel](https://xinreality.com/wiki/Fresnel_lens) lenses for any DIY VR build, since they are readily available for very low prices on platforms like Amazon and Aliexpress, and are thin and lightweight. Traditional biconvex lenses are wider, heavier (when built with glass), and usually cost more, but they may have increased visual clarity and no god rays. This is due to the design of fresnels and their fine concentric lines, which can introduce god rays and other distracting artifacts. Below is a visual comparision that should help explain the design of fresnel lenses further.
 
 <p align="middle">
   <img src="images/fresnel_plano_convex.jpg" width="200" height="300" alt="Fresnel and equivalent plano-convex lens." style="background-color:white;"/>
@@ -113,6 +127,8 @@ A large portion of our research comes from helpful articles and sources from com
 
 [XinReality - Frensel Lenses](https://xinreality.com/wiki/Fresnel_lens)
 
+[Vergence-accommodation conflict - Wikipedia](https://en.wikipedia.org/wiki/Vergence-accommodation_conflict)
+
 [Doc-Ok.org - Hacking the Oculus DK2](http://doc-ok.org/?p=1095)
 
 [Visual odometry - Wikipedia](https://en.wikipedia.org/wiki/Visual_odometry)
@@ -139,6 +155,6 @@ A large portion of our research comes from helpful articles and sources from com
 
 [Hypervision | XR240.Gen2](https://www.hypervision.ai/configure-xr240)
 
-Visual-Inertial Mapping with Non-Linear Factor Recovery, V. Usenko, N. Demmel, D. Schubert, J. Stückler, D. Cremers, In IEEE Robotics and Automation Letters (RA-L) [DOI:10.1109/LRA.2019.2961227] [arXiv:1904.06504].
+[1] By Rosedaler - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=123242579
 
 *Repository originally created on November 23, 2023.*
