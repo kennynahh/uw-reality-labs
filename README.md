@@ -52,6 +52,23 @@ Our team has received custom PCBs and other various electrical components for th
 
 SteamVR is the only universal platform with accessible driver SDKs (from Valve's OpenVR). It is an easy choice to pick for an open-source project. The drivers for Reality from Scratch can be found [here](https://github.com/kennynahh/reality-from-scratch/tree/main/drivers).
 
+### Lenses
+
+We recommend [fresnel](https://xinreality.com/wiki/Fresnel_lens) lenses for any DIY VR build, since they are readily available for very low prices on platforms like Amazon and Aliexpress, and are thin and lightweight. Traditional biconvex lenses are wider, heavier (when built with glass), and usually cost more, but they may have increased visual clarity and no god rays. This is due to the design of fresnels and their fine concentric lines, which can introduce god rays and other distracting artifacts. Below is a visual comparision that should help explain the design of fresnel lenses further.
+
+<p align="middle">
+  <img src="images/fresnel_plano_convex.jpg" width="200" height="300" alt="Fresnel and equivalent plano-convex lens." style="background-color:white;"/>
+  <img src="images/fresnel_lens_collapse.jpg" width="200" height="300" alt="Collapsing a conventional lens into an equivalent power Fresnel lens." style="background-color:white;"/>
+  <br>
+  <caption><em>Figure 1 (left): Fresnel lens (left) and equivalent power plano-convex lens (right).</em></caption>
+    <br>
+  <caption><em>Figure 2 (right): Collapsing a conventional lens into an equivalent power Fresnel lens.</em></caption>
+</p>
+
+Outside of biconvex and fresnel lenses, there are not many options, though there are some advanced [DIY stacked lens](https://hackaday.io/project/187343-easy-pancake-lenses) solutions out in the wild.
+
+A lot of these simpler lenses can be purchased at a wide assortment of focal lengths; we hope to test multiple. Depending on the focal length, the length of the headset's housing will vary, so there may be some merit in seeing the difference between shorter and longer housings (in terms of image quality, FOV, perceived weight of the HMD and how this affects comfort, etc.) Creating the mechanical design for the housing of the VR headset will be challenging, given that we'd like to include user-addressable IPD, as well as test different housing for different lenses. However, we are very excited to begin testing this once we finish modelling the 3D prints for our headset.
+
 ## Building your own Reality from Scratch
 
 For a comphrehensive guide on how to build your own Reality from Scratch - our open-source, DIY HMD, check out the guide [here](Reality-From-Scratch.md), or join the UW Reality Labs team if you're a student at the University of Waterloo!
@@ -96,23 +113,6 @@ The issues regarding comfort go further. The [vergence-accommodation conflict](h
 Meta Reality Labs revealed that they were working on a varifocal VR headset prototype as early as 2018 (called Half-Dome). The idea of the first Half-Dome prototype was to use eye tracking built in to the headset to figure out where the user was looking and which in-game object they were attempting to focus on. Then, through Oculus's API, the focal distance to that object could be found and then stepper motors within the headset would move the lenses accordingly, to set the lenses to that focal distance.
 
 This Half-Dome prototype is exactly the type of concept and the level of fidelity that the team wishes to implement into our headset at some point, whether or not it be univerally compatible with SteamVR.
-
-## Lens recommendations
-
-We recommend [fresnel](https://xinreality.com/wiki/Fresnel_lens) lenses for any DIY VR build, since they are readily available for very low prices on platforms like Amazon and Aliexpress, and are thin and lightweight. Traditional biconvex lenses are wider, heavier (when built with glass), and usually cost more, but they may have increased visual clarity and no god rays. This is due to the design of fresnels and their fine concentric lines, which can introduce god rays and other distracting artifacts. Below is a visual comparision that should help explain the design of fresnel lenses further.
-
-<p align="middle">
-  <img src="images/fresnel_plano_convex.jpg" width="200" height="300" alt="Fresnel and equivalent plano-convex lens." style="background-color:white;"/>
-  <img src="images/fresnel_lens_collapse.jpg" width="200" height="300" alt="Collapsing a conventional lens into an equivalent power Fresnel lens." style="background-color:white;"/>
-  <br>
-  <caption><em>Figure 1 (left): Fresnel lens (left) and equivalent power plano-convex lens (right).</em></caption>
-    <br>
-  <caption><em>Figure 2 (right): Collapsing a conventional lens into an equivalent power Fresnel lens.</em></caption>
-</p>
-
-Outside of biconvex and fresnel lenses, there are not many options, though there are some advanced [DIY stacked lens](https://hackaday.io/project/187343-easy-pancake-lenses) solutions out in the wild.
-
-A lot of these simpler lenses can be purchased at a wide assortment of focal lengths; we hope to test multiple. Depending on the focal length, the length of the headset's housing will vary, so there may be some merit in seeing the difference between shorter and longer housings (in terms of image quality, FOV, perceived weight of the HMD and how this affects comfort, etc.) Creating the mechanical design for the housing of the VR headset will be challenging, given that we'd like to include user-addressable IPD, as well as test different housing for different lenses. However, we are very excited to begin testing this once we finish modelling the 3D prints for our headset.
 
 ## Acknowledgements
 
