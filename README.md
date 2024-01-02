@@ -1,7 +1,7 @@
 # UW Reality Labs
 
 <p align="middle">
-<img src="images/uw-reality-labs/UW Reality Labs Banner.png" width="100%" height="auto">
+<img src="images/uw-reality-labs/UW Reality Labs Banner.png" width="100%" height="auto" alt="UW Reality Labs Banner">
 </p>
 
 ## About
@@ -14,7 +14,7 @@ This repository is primarily maintained by me - please reach out if you have any
 
 Based off of open-source guides, we are building our very own, fully custom VR headset. We call it **Reality from Scratch**.
 
-We first soldered an inertial measurement unit (IMU) and microcontroller unit (MCU) together, and got real-time motion vector data translated into SteamVR with drivers forked from the OpenVR SDK. We then routed the VR compositor output to our VR displays, which will soon have accompanying lenses and a custom 3D-printed housing. In addition to the HMD, we are building Vive Wand-style controllers, which we'll dive into deeper below.
+We first soldered an inertial measurement unit (IMU) and microcontroller unit (MCU) together, and got real-time motion vector data translated into SteamVR with drivers forked from the OpenVR SDK. Then, the VR Compositor output was routed to our VR displays, which will soon have accompanying lenses and a custom 3D-printed housing. In addition to the HMD, we are building Vive Wand-style controllers, which we'll dive into deeper below.
 
 From this headset, we plan to build other systems, such as an inside-out 6DoF tracking solution using visual-inertial odometry, or a varifocal lens solution using eye tracking and motors or voice coils.
 
@@ -36,7 +36,7 @@ From this headset, we plan to build other systems, such as an inside-out 6DoF tr
 | HadesVR/PS3 Move Controllers | 2 |
 | USB Hubs | *varies* |
 
-Here's a simple flow chart of the how the different components of the VR device interact with each other:
+Here's a simple flow chart of how the different components of the VR device interact with each other:
 
 <div align="middle">
 <img src="images/End-to-End PC VR Interface.jpg" alt="End-to-End PC VR Interface" style="width: 50%; height: auto;"> </div>
@@ -102,7 +102,7 @@ We hope to achieve a full 6DoF positional tracking system with our headset by in
 
 The interactions between the lenses and the user can often make or break the experience of a lot of consumer VR headsets. Popular consumer VR products like the [Valve Index](https://www.valvesoftware.com/en/index/deep-dive/) have fully adjustable lens interpupilary distance (IPD), as well as adjustable eye relief (distance of the lenses from the user's eyes). This makes this product much more accessible to a wide range of users, and serves to be more comfortable for individuals sensitiive to such changes. However, the further the lenses are from the user's eyes, the smaller the field of view (FoV) is, (given the lenses stay the same size) - and this is why it is especially important that the VR headset sits at a reasonable length from the user's face.
 
-The issues regarding comfort go further. The [vergence-accommodation conflict](https://en.wikipedia.org/wiki/Vergence-accommodation_conflict) is one phenomenon that VR researchers have been working to solve for many years. It occurs when a user perceives an object in VR to be a certain distance away, but the user's eyes are focused at a a different distance, due to the lenses in the VR headset only being able to show one fixed focal distance (the distance between the user and the object of focus). This focal distance is said to be at around 2m for most consumer VR headets today, meaning that any object closer than or further than 2m away in a virtual scene will look blurry and be unable to focus on naturally. This can cause eye strain and motion sickness, which is likely a deal-breaker for many would-be new VR users.
+The issues regarding comfort go further. The [vergence-accommodation conflict](https://en.wikipedia.org/wiki/Vergence-accommodation_conflict) is one phenomenon that VR researchers have been working to solve for many years. It occurs when a user perceives an object in VR to be a certain distance away, but the user's eyes are focused at a a different distance, due to the lenses in the VR headset only being able to show one fixed focal distance (the distance between the user and the virtual object of focus). This focal distance is said to be at around 2m for most consumer VR headets today, meaning that any object closer than or further than 2m away in a virtual scene will look blurry and be unable to focus on naturally. This can cause eye strain and motion sickness, which is likely a deal-breaker for many would-be new VR users.
 
 <p align="middle">
   <img src="images/Vergence-Accommodation_Conflict_Diagram.jpg" width="500" height="auto" alt="Vergence-accommodation conflict diagram." style="background-color:white;"/>
@@ -151,12 +151,14 @@ A large portion of our research comes from helpful articles and sources from com
 
 [Achromatic lens - Wikipedia](https://en.wikipedia.org/wiki/Achromatic_lens)
 
-[Abbe number - Wikipedia](https://en.wikipedia.org/wiki/Abbe_number)
-
 [How Varjo delivers human eye resolution - Varjo](https://varjo.com/blog/introducing-bionic-display-how-varjo-delivers-human-eye-resolution/)
 
 [Hypervision | XR240.Gen2](https://www.hypervision.ai/configure-xr240)
 
-[1] By Rosedaler - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=123242579
+[Project Caliper - Prototyping VR Controllers](https://skarredghost.com/2021/12/08/project-caliper-prototyping-controllers-vr/)
+
+[EyeTrackVR Docs](https://docs.eyetrackvr.dev)
+
+[1] By Rosedaler - Own work, CC BY-SA 4.0, <https://commons.wikimedia.org/w/index.php?curid=123242579>
 
 *Repository originally created on November 23, 2023.*
