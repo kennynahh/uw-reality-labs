@@ -105,7 +105,7 @@ In order to upload the firmware, you will need the [FastIMU](https://github.com/
 
 <em>Search for and download the FastIMU library in the library manager.</em><br>
 
-This will have added the example sketches we need. Upload the "Calibrated_HadesVR.ino" file or the "Calibrated_Relativty.ino" sketch to the Arduino Pro Micro. Calibrate your IMU by following the steps shown in the console.
+This will have added the example sketches we need. Upload the "Calibrated_HadesVR" or "Calibrated_Relativty" sketch to the Arduino Pro Micro. Calibrate your IMU by following the steps shown in the console.
 
 <img src="images/guide/IDE_fastimu_sketch.png" alt="FastIMU Example Sketches" width = "700" height = "auto">
 
@@ -113,12 +113,20 @@ This will have added the example sketches we need. Upload the "Calibrated_HadesV
 
 The next step is to allow for your MCU to send data to SteamVR through the drivers. Install the Reality from Scratch drivers by placing the "realityfromscratch" drivers (which you can download [here](/drivers/)) within the SteamVR "drivers" folder (usually located at C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers).
 
-Next, open the configuration file (called 'default.vrsettings') for the SteamVR driver - we're going to add the USB PID and VID values of your MCU to the drivers. Make sure the following values are set as such in the file:
+Next, open the configuration file (called 'default.vrsettings') for the SteamVR driver - we're going to add the USB PID and VID values of your MCU (as set by Arduino sketch) to the drivers. Make sure the following values are set as such in the file if you uploaded the "Calibrated_Relativty" sketch:
 
       "hmdPid" : 32823,
       "hmdVid": 9025,
 
-Make sure the following is set to false as well:
+Or if you used the "Calibrated_HadesVR" sketch, make sure they are set as such (our drivers are set to this by default):
+
+      "hmdPid" : 32822,
+      "hmdVid": 9025,
+
+
+If SteamVR fails to pick up your MCU, make sure of your MCU's USB PID and VID values by going into Arduino IDE and selecting Tools -> Get Board Info. This will show your board's PID and VID values in hexadecimal format, so convert them into decimal form and replace the "hmdPid" and "hmdVid" values as needed.
+
+Do not delete any of the commas. Make sure the following is set to false as well:
 
       "hmdIMUdmpPackets":  false,
 
