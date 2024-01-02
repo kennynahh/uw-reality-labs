@@ -62,7 +62,7 @@ We went with 50mm focal length and 50mm diameter lenses, and they are what our 3
 
 If you would like to use our 3D printed design, make sure you are using 50mm diameter / 50mm focal length lenses, preferrably biconvex glass (as these are what we designed the housing around, and are thicker than equivalent fresnel lenses). You can find the print design to download in the /prints/ folder (coming very soon).
 
-### Beginning the build
+## Build Guide
 
 We can begin by building out the brains of the HMD. This will take no time and be useful to test the drivers, MCU, and IMU before purchasing and/or putting everything else together. This begins by taking your Arduino Pro Micro and connecting the following 4 pins from your Pro Micro to your IMU using wires to connect to soldered pins, or a breadboard:
 
@@ -71,26 +71,57 @@ We can begin by building out the brains of the HMD. This will take no time and b
 > SDA $\longleftrightarrow$ SDA (Serial Data) <br>
 > SCL $\longleftrightarrow$ SCL (Serial Clock) <br>
 
-<img src="images/guide/pro_micro_pinout.png" alt="Arduino Pro Micro Pinout (SparkFun)" style="width: 40%; height: auto;">
-<figcaption><em>Example SparkFun Arduino Pro Micro Pinout. GND, VCC, SDA, and SCL must be connected.</em></figcaption><br>
+<img src="images/guide/pro_micro_pinout.png" alt="Arduino Pro Micro Pinout (SparkFun)" style="width: 40%; height: auto;"><br>
+
+<em>Example SparkFun Arduino Pro Micro Pinout. GND, VCC, SDA, and SCL must be connected.</em><br>
 
 We can now upload the FastIMU firmware to the Arduino Pro Micro. To do this, download/open the Arduino IDE on your PC and connect your Pro Micro using your USB cable. Next, we need to select our board from the dropdown menu located at the top of the IDE.
 
 <img src="images/guide/IDE_select_board.png" alt="'Select Board' in the Arduino IDE" width = "700" height = "auto">
-<figcaption><em>'Select Board' in the Arduino IDE.</em></figcaption><br>
+
+<em>'Select Board' in the Arduino IDE.</em><br>
 
 The exact model name of your MCU varies depending on your board. Some boards will be recognized as a 'Pro Micro' or an 'Arduino Leonardo', but our Arduino Pro Micro was a SparkFun derivative, so we installed the [SparkFun board library](https://learn.sparkfun.com/tutorials/installing-arduino-ide/board-add-ons-with-arduino-board-manager) and found the SparkFun Pro Micro in the dropdown menu.
 
 <img src="images/guide/IDE_add_boards.png" alt="Add additional boards in the Arduino IDE" width = "700" height = "auto">
-<figcaption><em>Installing SparkFun boards: Copy and Paste SparkFun boards URL into 'Additional board manager URLs' (Arduino IDE -> Settings)</em></figcaption><br>
+
+<em>Installing SparkFun boards: Copy and Paste SparkFun boards URL into 'Additional board manager URLs' (Arduino IDE -> Settings)</em><br>
 
 <img src="images/guide/IDE_sparkfun_avr.png" alt="Install SparkFun AVR Boards" width = "700" height = "auto">
-<figcaption><em>Sort by Type: Contributed in Boards Manager and install 'SparkFun AVR Boards'.</em></figcaption><br>
 
-This should hopefully have your IDE connected to your Arduino board - but you might want to upload an example sketch to make sure everything is working fine. Given that, you are now ready to upload the FastIMU firmware.
+<em>Sort by Type: Contributed in Boards Manager and install 'SparkFun AVR Boards'.</em><br>
 
-In order to upload the firmware, you will need the [FastIMU](https://github.com/LiquidCGS/FastIMU/tree/main) library (and the RF24 Arduino Library if you're using HadesVR's HMD PCB with the RF transcievers). You can download these through the Library Manager on the Arduino IDE. Upload the "Calibrated_HadesVR.ino" file or the "Calibrated_Relativty.ino" sketch to the Arduino Pro Micro. Calibrate your IMU by following the steps shown in the console.
+<img src="images/guide/IDE_select_sparkfun.png" alt="Select SparkFun Pro Micro in the IDE" width = "700" height = "auto">
 
-Now, you can install the drivers so that SteamVR can recognize the HMD. Place the "realityfromscratch" drivers (which you can download [here](/drivers/)) within the SteamVR "drivers" folder.
+<em>You can now select the SparkFun Pro Micro in the Arduino IDE.</em><br>
 
-WIP (for now)! If you need a complete guide, find Relativty's or HadesVR's.
+This should hopefully have your IDE connected to your Arduino board - but you might want to upload an example sketch to make sure everything is working fine. For our SparkFun Pro Micro derivative board, we had to set the operating voltage to 5V and microcontroller to run at 16MHz first before doing anything else.
+
+Given that, you are now ready to upload the FastIMU firmware.
+
+In order to upload the firmware, you will need the [FastIMU](https://github.com/LiquidCGS/FastIMU/tree/main) library (and the RF24 Arduino Library if you're using HadesVR's HMD PCB with the RF transcievers). You can download these through the Library Manager on the Arduino IDE. 
+
+<img src="images/guide/IDE_fastimu.png" alt="FastIMU Download" width = "700" height = "auto">
+
+<em>Search for and download the FastIMU library in the library manager.</em><br>
+
+This will have added the example sketches we need. Upload the "Calibrated_HadesVR.ino" file or the "Calibrated_Relativty.ino" sketch to the Arduino Pro Micro. Calibrate your IMU by following the steps shown in the console.
+
+<img src="images/guide/IDE_fastimu_sketch.png" alt="FastIMU Example Sketches" width = "700" height = "auto">
+
+<em>This is where you can find the example sketches.</em><br>
+
+The next step is to allow for your MCU to send data to SteamVR through the drivers. Install the Reality from Scratch drivers by placing the "realityfromscratch" drivers (which you can download [here](/drivers/)) within the SteamVR "drivers" folder (usually located at C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers).
+
+Next, open the configuration file (called 'default.vrsettings') for the SteamVR driver - we're going to add the USB PID and VID values of your MCU to the drivers. Make sure the following values are set as such in the file:
+
+      "hmdPid" : 32823,
+      "hmdVid": 9025,
+
+Make sure the following is set to false as well:
+
+      "hmdIMUdmpPackets":  false,
+
+If "hmdIMUdmpPackets" is left as 'true', your SteamVR output will go haywire, as the driver will dump random numbers in place of real data from the IMU.
+
+The last thing left to do in the file is to configure your display settings.
