@@ -50,7 +50,7 @@ Our team has received custom PCBs and other various electrical components for th
 
 ### Drivers
 
-SteamVR is the only universal platform with accessible driver SDKs (from Valve's OpenVR). It is an easy choice to pick for an open-source project. The drivers for Reality from Scratch can be found [here](https://github.com/kennynahh/reality-from-scratch/tree/main/drivers).
+SteamVR is the only universal platform with accessible driver SDKs (from Valve's OpenVR). It is an easy choice for an open-source VR project. The drivers for Reality from Scratch can be found [here](https://github.com/kennynahh/reality-from-scratch/tree/main/drivers). We use them in conjunction with the FastIMU Arduino library.
 
 ### Lenses
 
@@ -71,7 +71,7 @@ A lot of these simpler lenses can be purchased at a wide assortment of focal len
 
 ## Building your own Reality from Scratch
 
-For a comphrehensive guide on how to build your own Reality from Scratch - our open-source, DIY HMD, check out the guide [here](Reality-From-Scratch.md), or join the UW Reality Labs team if you're a student at the University of Waterloo!
+For a comphrehensive guide on how to build your own Reality from Scratch - our open-source, DIY HMD, check out the guide [here](HMD-Guide.md), or join the UW Reality Labs team if you're a student at the University of Waterloo!
 
 <div align="middle">
 <img src="images/HadesVR_HMD_unfinished.jpg" alt="unfinished HMD module built on HadesVR PCB" style="width: 50%; height: auto;">
@@ -100,7 +100,7 @@ We hope to achieve a full 6DoF positional tracking system with our headset by in
 
 ### Optics and comfort
 
-The interactions between the lenses and the user can often make or break the experience of a lot of consumer VR headsets. Popular consumer VR products like the [Valve Index](https://www.valvesoftware.com/en/index/deep-dive/) have fully adjustable lens interpupilary distance (IPD), as well as adjustable eye relief (distance of the lenses from the user's eyes). This makes this product much more accessible to a wide range of users, and serves to be more comfortable for individuals sensitiive to such changes. However, the further the lenses are from the user's eyes, the smaller the field of view (FoV) is, (given the lenses stay the same size) - and this is why it is especially important that the VR headset sits at a reasonable length from the user's face.
+The interactions between the lenses and the user can often make or break the experience of a lot of consumer VR headsets. Popular consumer VR products like the [Valve Index](https://www.valvesoftware.com/en/index/deep-dive/) have fully adjustable lens interpupilary distance (IPD), as well as adjustable eye relief (distance of the lenses from the user's eyes). This makes this product much more accessible to a wide range of users, and serves to be more comfortable for individuals sensitiive to such changes. However, the further the lenses are from the user's eyes, the smaller the field of view (FoV) is, (given the lenses stay the same size) - and this is why it is especially important that the VR headset sits at a reasonable length from the user's face. The Valve Index also has canted (tilted) displays, to further conform around the face of the user. This is beneficial for many reasons (including FoV), but also introduces new types of optical distortions that are difficult to correct.
 
 The issues regarding comfort go further. The [vergence-accommodation conflict](https://en.wikipedia.org/wiki/Vergence-accommodation_conflict) is one phenomenon that VR researchers have been working to solve for many years. It occurs when a user perceives an object in VR to be a certain distance away, but the user's eyes are focused at a a different distance, due to the lenses in the VR headset only being able to show one fixed focal distance (the distance between the user and the virtual object of focus). This focal distance is said to be at around 2m for most consumer VR headets today, meaning that any object closer than or further than 2m away in a virtual scene will look blurry and be unable to focus on naturally. This can cause eye strain and motion sickness, which is likely a deal-breaker for many would-be new VR users.
 
@@ -112,7 +112,7 @@ The issues regarding comfort go further. The [vergence-accommodation conflict](h
 
 Meta Reality Labs revealed that they were working on a varifocal VR headset prototype as early as 2018 (called Half-Dome). The idea of the first Half-Dome prototype was to use eye tracking built in to the headset to figure out where the user was looking and which in-game object they were attempting to focus on. Then, through Oculus's API, the focal distance to that object could be found and then stepper motors within the headset would move the lenses accordingly, to set the lenses to that focal distance.
 
-This Half-Dome prototype is exactly the type of concept and the level of fidelity that the team wishes to implement into our headset at some point, whether or not it be univerally compatible with SteamVR.
+This Half-Dome prototype is exactly the type of concept and the level of fidelity that the team wishes to implement into our headset at some point, whether or not it be univerally compatible with SteamVR. This will begin with implementing eye-tracking hardware into Reality from Scratch.
 
 ## Acknowledgements
 
