@@ -18,6 +18,9 @@ We first soldered an inertial measurement unit (IMU) and microcontroller unit (M
 
 From this headset, we plan to build other systems, such as an inside-out 6DoF tracking solution using visual-inertial odometry, or a varifocal lens solution using eye tracking and motors or voice coils.
 
+<div align="middle">
+<img src="images/HMD_Enclosure_1.jpg" alt="HMD Enclosure for the HMD" style="width: 80%; height: auto;"> </div>
+
 ### Basic HMD Hardware
 
 | **Components** | **Our Choice** | **Count** |
