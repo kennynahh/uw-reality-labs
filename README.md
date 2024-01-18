@@ -4,6 +4,9 @@
 <img src="images/uw-reality-labs/UW Reality Labs Banner.png" width="100%" height="auto" alt="UW Reality Labs Banner">
 </p>
 
+## This repository is now outdated.
+
+UW Reality Labs started as my own little thing - initially a solo operation where I documented my progress building an open-source VR device on this personal GitHub repository. As we evolve into a comprehensive design team at the University of Waterloo, I've migrated all activities to the organization's GitHub. While I'll be retaining the old stuff here, feel free to check out our latest work [here](https://github.com/uwrealitylabs)! The original repository continues below.
 ## About
 
 UW Reality Labs is a newly founded design team at the University of Waterloo, which offers students the opportunity to engage directly with virtual reality technologies. This initiative focuses on providing practical experience in the inner workings of consumer VR technology, covering a comprehensive range of aspects including hardware, software, drivers, and ergonomics, among others. While we are a design "team", our main focus is learning and research.
